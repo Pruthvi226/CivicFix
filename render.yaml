@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: civicfix-app
+    env: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: civicfix-db
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: civicfix-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: civicfix-db
+          property: password
+
+databases:
+  - name: civicfix-db
+    databaseName: civicfix_db
+    plan: free
+    region: singapore
