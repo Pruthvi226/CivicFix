@@ -1,93 +1,113 @@
+<%@ include file="../common/taglibs.jsp" %>
 <c:set var="title" value="${title}" />
 <%@ include file="../common/header.jsp" %>
 
-<div style="max-width: 800px; margin: 0 auto;">
-    <h1>Report an Infrastructure Issue</h1>
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">Help us identify problems. Our AI will automatically classify your report.</p>
+<div style="max-width: 1000px; margin: 0 auto; padding: 2rem 0;">
+    <div style="margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.04em;">Report an Infrastructure Issue</h1>
+        <p style="color: var(--text-muted); font-size: 1.125rem;">Help us identify problems. Our AI will automatically classify and route your report.</p>
+    </div>
 
-    <div class="dashboard-grid">
-        <div style="grid-column: span 2;">
-            <form action="<c:url value='/citizen/complaint/submit'/>" method="post" id="complaintForm">
-                <div class="stat-card">
-                    <div class="form-group">
-                        <label for="description">Describe the issue in plain language</label>
-                        <textarea id="description" name="description" rows="4" 
-                            placeholder="e.g. There is a deep pothole near the main market signal causing traffic..." required></textarea>
-                        <div id="ai-status" style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--primary); display: none;">
-                            <i class="fa-solid fa-robot"></i> AI is analyzing...
-                        </div>
+    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start;">
+        <form action="<c:url value='/citizen/complaint/submit'/>" method="post" id="complaintForm">
+            <div class="stat-card" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="description">Describe the issue in plain language</label>
+                    <textarea id="description" name="description" rows="5" 
+                        style="font-size: 1rem; padding: 1rem;"
+                        placeholder="e.g. There is a deep pothole near the main market signal causing traffic..." required></textarea>
+                    <div id="ai-status" style="font-size: 0.8125rem; margin-top: 0.75rem; color: var(--secondary); display: none; font-weight: 600;">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> AI is analyzing your description...
                     </div>
+                </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div class="form-group">
-                            <label for="category">Detected Category</label>
-                            <select id="category" name="category" required>
-                                <option value="POTHOLE">Pothole</option>
-                                <option value="DRAIN">Drain / Sewage</option>
-                                <option value="STREETLIGHT">Streetlight</option>
-                                <option value="GARBAGE">Garbage</option>
-                                <option value="OTHER">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="severity">Estimated Severity</label>
-                            <select id="severity" name="severity" required>
-                                <option value="LOW">Low</option>
-                                <option value="MEDIUM">Medium</option>
-                                <option value="HIGH">High</option>
-                                <option value="CRITICAL">Critical</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ward">Ward / Locality</label>
-                        <select id="ward" name="ward.id" required>
-                            <option value="">Select Ward</option>
-                            <c:forEach var="ward" items="${wards}">
-                                <option value="${ward.id}">${ward.name}</option>
-                            </c:forEach>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="category">Detected Category</label>
+                        <select id="category" name="category" required style="background: #f8fafc;">
+                            <option value="POTHOLE">Pothole</option>
+                            <option value="DRAIN">Drain / Sewage</option>
+                            <option value="STREETLIGHT">Streetlight</option>
+                            <option value="GARBAGE">Garbage</option>
+                            <option value="OTHER">Other</option>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label>Location (GPS)</label>
-                        <div style="display: flex; gap: 1rem;">
-                            <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly required>
-                            <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly required>
-                            <button type="button" class="btn" onclick="getLocation()" style="width: auto; background: #f1f5f9; color: var(--text-main);">
-                                <i class="fa-solid fa-location-crosshairs"></i> Get Location
-                            </button>
-                        </div>
-                        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
-                            We need your exact location to check for duplicates and alert field workers.
-                        </p>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="severity">Estimated Severity</label>
+                        <select id="severity" name="severity" required style="background: #f8fafc;">
+                            <option value="LOW">Low Priority</option>
+                            <option value="MEDIUM">Medium Priority</option>
+                            <option value="HIGH">High Priority</option>
+                            <option value="CRITICAL">Critical / Urgent</option>
+                        </select>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="address">Full Address / Landmark</label>
-                        <input type="text" id="address" name="address" placeholder="e.g. Near HDFC Bank ATM, 5th Cross" required>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="ward">Ward / Locality</label>
+                    <select id="ward" name="ward.id" required>
+                        <option value="">Select Ward</option>
+                        <c:forEach var="ward" items="${wards}">
+                            <option value="${ward.id}">${ward.name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>GPS Location Verification</label>
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" id="latitude" name="latitude" placeholder="Latitude" required style="background: #f1f5f9;">
+                        <input type="text" id="longitude" name="longitude" placeholder="Longitude" required style="background: #f1f5f9;">
+                        <button type="button" class="btn btn-outline" onclick="getLocation()" style="white-space: nowrap;">
+                            <i class="fa-solid fa-location-crosshairs"></i> Get Current
+                        </button>
                     </div>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        <i class="fa-solid fa-circle-info"></i> Accurate GPS helps us check for duplicates nearby.
+                    </p>
+                </div>
 
-                    <input type="hidden" id="estimatedFixTime" name="estimatedFixTime" value="72">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="address">Full Address / Landmark</label>
+                    <input type="text" id="address" name="address" placeholder="e.g. Near HDFC Bank ATM, 5th Cross" required>
+                </div>
 
-                    <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
-                        <i class="fa-solid fa-paper-plane"></i> Submit Report
+                <input type="hidden" id="estimatedFixTime" name="estimatedFixTime" value="72">
+
+                <div style="padding-top: 1rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Smart Report
                     </button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
 
-        <div>
-            <div class="stat-card" style="position: sticky; top: 100px;">
-                <h3 style="font-size: 1rem; margin-bottom: 1rem;">Smart Fix AI Insight</h3>
-                <div id="ai-insight" style="font-size: 0.875rem; color: var(--text-muted);">
-                    Start typing your complaint to see AI classification in real-time.
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="stat-card" style="background: var(--primary); color: white; border: none;">
+                <h3 style="font-size: 1.125rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-robot" style="color: var(--secondary);"></i>
+                    Smart Fix AI Insight
+                </h3>
+                <div id="ai-insight" style="font-size: 0.875rem; opacity: 0.9; line-height: 1.6;">
+                    Our AI models are ready. Start typing your complaint to see real-time classification and fix-time estimates.
                 </div>
-                <div id="duplicate-warning" class="error-msg" style="display: none; margin-top: 1rem; background: #fffbeb; color: #92400e; border-color: #fef3c7;">
-                    <i class="fa-solid fa-triangle-exclamation"></i> 
-                    <strong>Duplicate Radar:</strong> Similar issues reported nearby. Check before submitting!
+            </div>
+
+            <div id="duplicate-warning" class="stat-card" style="display: none; border-color: var(--accent); background: #fffbeb;">
+                <h3 style="font-size: 1rem; color: #92400e; margin-bottom: 0.5rem;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Duplicate Alert
+                </h3>
+                <div id="duplicate-content" style="font-size: 0.875rem; color: #92400e; line-height: 1.5;">
                 </div>
+            </div>
+
+            <div class="stat-card">
+                <h3 style="font-size: 1rem; margin-bottom: 1rem;">Why Report?</h3>
+                <ul style="padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; color: var(--text-muted);">
+                    <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Direct alert to Ward Officials</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Earn 10 Karma Points per report</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Contribute to Ward Health Score</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -124,11 +144,12 @@ async function classifyComplaint() {
         
         const insight = document.getElementById('ai-insight');
         insight.innerHTML = `
-            <div style="margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 0.5rem; color: #166534;">
-                <strong>Detected:</strong> ${data.category}<br>
-                <strong>Severity:</strong> ${data.severity}<br>
-                <strong>Est. Fix Time:</strong> ${data.estimatedFixTime} hours
+            <div style="margin-top: 1rem; padding: 1.25rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem;">
+                <div style="margin-bottom: 0.5rem;"><strong>Detected Issue:</strong> ${data.category}</div>
+                <div style="margin-bottom: 0.5rem;"><strong>Priority Level:</strong> ${data.severity}</div>
+                <div><strong>Resolution Window:</strong> ${data.estimatedFixTime} hours</div>
             </div>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">AI confidence high. You can still manually adjust these if needed.</p>
         `;
     } catch (e) {
         console.error("AI Classification failed", e);
@@ -143,6 +164,8 @@ function getLocation() {
             document.getElementById('latitude').value = pos.coords.latitude.toFixed(8);
             document.getElementById('longitude').value = pos.coords.longitude.toFixed(8);
             checkDuplicates(pos.coords.latitude, pos.coords.longitude);
+        }, (err) => {
+            alert("Error getting location: " + err.message);
         });
     } else {
         alert("Geolocation is not supported by this browser.");
@@ -162,12 +185,12 @@ async function checkDuplicates(lat, lon) {
         const duplicates = await response.json();
         
         const warning = document.getElementById('duplicate-warning');
+        const content = document.getElementById('duplicate-content');
         if (duplicates.length > 0) {
             warning.style.display = 'block';
-            warning.innerHTML = `
-                <i class="fa-solid fa-triangle-exclamation"></i> 
-                <strong>Duplicate Radar:</strong> ${duplicates.length} similar issues reported within 100m in the last 30 days. 
-                <a href="#" style="color: inherit; text-decoration: underline;">View existing reports</a> instead of re-reporting.
+            content.innerHTML = `
+                ${duplicates.length} similar issue(s) reported within 100m in the last 30 days. 
+                Consider <a href="#" style="color: inherit; font-weight: 700;">upvoting existing reports</a> instead of creating a duplicate.
             `;
         } else {
             warning.style.display = 'none';

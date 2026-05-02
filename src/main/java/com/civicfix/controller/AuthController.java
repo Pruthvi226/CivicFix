@@ -45,7 +45,9 @@ public class AuthController {
     @PostMapping("/register")
     public String register(@ModelAttribute User user, Model model) {
         try {
-            user.setRole(User.UserRole.CITIZEN); // Default to citizen
+            if (user.getRole() == null) {
+                user.setRole(User.UserRole.CITIZEN);
+            }
             userService.register(user);
             return "redirect:/login?success=Account created successfully";
         } catch (Exception e) {

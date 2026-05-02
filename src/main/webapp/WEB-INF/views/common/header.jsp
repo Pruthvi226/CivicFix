@@ -14,6 +14,14 @@
     </style>
 </head>
 <body>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span style="margin-right: 50px;"><i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Live City Pulse: North Ward reports 98% resolution rate this week!</span>
+            <span style="margin-right: 50px;"><i class="fa-solid fa-leaf" style="color: var(--secondary);"></i> 500+ trees planted via Karma Perks so far!</span>
+            <span style="margin-right: 50px;"><i class="fa-solid fa-shield-halved"></i> Whistleblower Mode active: Secure anonymous reporting enabled.</span>
+            <span style="margin-right: 50px;"><i class="fa-solid fa-trophy" style="color: var(--accent);"></i> Citizen @final_tester just reached 'Local Hero' status!</span>
+        </div>
+    </div>
     <nav>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
             <a href="<c:url value='/'/>" class="logo">

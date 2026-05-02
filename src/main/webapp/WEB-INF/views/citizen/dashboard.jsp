@@ -10,9 +10,12 @@
     <div style="display: flex; gap: 1.5rem; align-items: center;">
         <div style="text-align: right;">
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Karma Balance</div>
-            <div style="font-size: 1.75rem; font-weight: 800; color: var(--secondary);">
+            <div style="font-size: 1.75rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.25rem;">
                 <i class="fa-solid fa-star-half-stroke"></i> ${sessionScope.user.karmaPoints}
             </div>
+            <a href="<c:url value='/citizen/perks'/>" style="font-size: 0.75rem; font-weight: 700; color: var(--accent); text-decoration: none; display: flex; align-items: center; justify-content: flex-end; gap: 0.25rem;">
+                <i class="fa-solid fa-cart-shopping"></i> Marketplace
+            </a>
         </div>
         <a href="<c:url value='/citizen/complaint/new'/>" class="btn btn-primary" style="padding: 0.875rem 1.5rem;">
             <i class="fa-solid fa-plus"></i> New Report

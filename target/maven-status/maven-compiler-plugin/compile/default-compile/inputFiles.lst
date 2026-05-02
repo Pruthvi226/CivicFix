@@ -8,12 +8,15 @@ C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\con
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\UserServiceImpl.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\SchedulerService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\WhistleblowerReportDao.java
+C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\PerkService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\WardDaoImpl.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\UserDaoImpl.java
+C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\entity\Perk.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\controller\WorkerController.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\PredictiveMaintenanceService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\util\EncryptionUtil.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dto\LocationDto.java
+C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\PerkDaoImpl.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\controller\OfficialController.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\ComplaintDaoImpl.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\KarmaTransactionDaoImpl.java
@@ -22,6 +25,7 @@ C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\ser
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\WhistleblowerReportDaoImpl.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\UserService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\util\PasswordUtil.java
+C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\dao\PerkDao.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\KarmaEngineService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\WhistleblowerService.java
 C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\java\com\civicfix\service\WardHealthScoreService.java

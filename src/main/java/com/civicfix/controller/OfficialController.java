@@ -46,6 +46,17 @@ public class OfficialController {
         return "official/dashboard";
     }
 
+    @GetMapping("/heatmap")
+    public String showHeatmap(HttpSession session, Model model) {
+        User official = (User) session.getAttribute("user");
+        if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
+
+        List<Ward> wards = wardDao.findAll();
+        model.addAttribute("wards", wards);
+        model.addAttribute("title", "City Health Heatmap");
+        return "official/heatmap";
+    }
+
     @PostMapping("/complaint/{id}/assign")
     public String assignWorker(@PathVariable Long id, @RequestParam Long workerId) {
         Complaint complaint = complaintDao.findById(id);

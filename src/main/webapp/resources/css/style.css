@@ -268,3 +268,60 @@ th {
 tr:last-child td {
     border-bottom: none;
 }
+/* Live Pulse Ticker */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: var(--primary);
+    padding: 0.5rem 0;
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heatmap Grid */
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.heatmap-cell {
+    aspect-ratio: 1;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heatmap-cell:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}

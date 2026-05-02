@@ -62,6 +62,8 @@ CREATE TABLE complaints (
     FOREIGN KEY (ward_id) REFERENCES wards(id),
     FOREIGN KEY (assigned_worker_id) REFERENCES users(id)
 );
+CREATE INDEX idx_complaints_status ON complaints(status);
+CREATE INDEX idx_complaints_ward ON complaints(ward_id);
 
 -- 4. KARMA TRANSACTIONS
 CREATE TABLE karma_transactions (

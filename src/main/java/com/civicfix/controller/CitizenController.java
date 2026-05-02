@@ -10,6 +10,8 @@ import com.civicfix.service.DuplicateRadarService;
 import com.civicfix.service.KarmaEngineService;
 import com.civicfix.dto.ClassificationResponse;
 import com.civicfix.dto.LocationDto;
+import com.civicfix.entity.Perk;
+import com.civicfix.service.PerkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +38,9 @@ public class CitizenController {
 
     @Autowired
     private KarmaEngineService karmaEngineService;
+
+    @Autowired
+    private PerkService perkService;
 
     @GetMapping("/dashboard")
     public String dashboard(HttpSession session, Model model) {
@@ -107,5 +112,28 @@ public class CitizenController {
             complaintDao.update(complaint);
         }
         return "redirect:/citizen/dashboard?success=Verification completed";
+    }
+
+    @GetMapping("/perks")
+    public String showPerks(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        model.addAttribute("perks", perkService.getAvailablePerks());
+        model.addAttribute("userKarma", user.getKarmaPoints());
+        model.addAttribute("title", "Karma Marketplace");
+        return "citizen/perks";
+    }
+
+    @PostMapping("/perks/redeem/{id}")
+    public String redeemPerk(@PathVariable Long id, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        if (perkService.redeemPerk(user.getId(), id)) {
+            return "redirect:/citizen/perks?success=Perk redeemed successfully!";
+        } else {
+            return "redirect:/citizen/perks?error=Insufficient Karma points.";
+        }
     }
 }
