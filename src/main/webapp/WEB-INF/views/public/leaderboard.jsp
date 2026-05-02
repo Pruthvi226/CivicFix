@@ -1,56 +1,78 @@
+<%@ include file="../common/taglibs.jsp" %>
 <c:set var="title" value="${title}" />
 <%@ include file="../common/header.jsp" %>
 
-<div style="margin-bottom: 3rem; text-align: center;">
-    <h1>City Health & Karma Leaderboard</h1>
-    <p style="color: var(--text-muted);">Real-time transparency on ward performance and top contributors</p>
+<div style="padding: 3rem 0; text-align: center; border-bottom: 1px solid var(--border); margin-bottom: 4rem;">
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.04em;">City Pulse Dashboard</h1>
+    <p style="color: var(--text-muted); font-size: 1.125rem;">Real-time transparency on ward performance and community contributions.</p>
 </div>
 
-<div class="dashboard-grid">
+<div class="dashboard-grid" style="gap: 4rem;">
     <div>
-        <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-medal" style="color: var(--accent);"></i> Top Ward Scores</h2>
-        <div class="stat-card" style="padding: 0;">
-            <table style="width: 100%; border-collapse: collapse;">
-                <c:forEach var="ward" items="${wards}" varStatus="status">
-                    <tr style="border-bottom: 1px solid #f1f5f9;">
-                        <td style="padding: 1rem; width: 50px; font-weight: 800; color: var(--text-muted);">#${status.count}</td>
-                        <td style="padding: 1rem; font-weight: 600;">${ward.name}</td>
-                        <td style="padding: 1rem; text-align: right;">
-                            <span class="badge" style="font-size: 1rem; padding: 0.5rem 1rem; 
-                                background: ${ward.healthScore >= 80 ? '#dcfce7' : (ward.healthScore >= 50 ? '#fef9c3' : '#fee2e2')};
-                                color: ${ward.healthScore >= 80 ? '#15803d' : (ward.healthScore >= 50 ? '#a16207' : '#b91c1c')};">
-                                ${ward.healthScore} / 100
-                            </span>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 800;"><i class="fa-solid fa-chart-line" style="color: var(--secondary);"></i> Ward Health Index</h2>
+            <span style="font-size: 0.875rem; color: var(--text-muted);">Updated 5m ago</span>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <c:forEach var="ward" items="${wards}">
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; align-items: flex-end;">
+                        <span style="font-weight: 700; font-size: 1.125rem;">${ward.name}</span>
+                        <span style="font-weight: 800; color: ${ward.healthScore >= 80 ? 'var(--secondary)' : (ward.healthScore >= 50 ? 'var(--accent)' : 'var(--error)')};">
+                            ${ward.healthScore}%
+                        </span>
+                    </div>
+                    <div class="progress-container" style="height: 0.75rem;">
+                        <div class="progress-bar" style="width: ${ward.healthScore}%; 
+                            background: ${ward.healthScore >= 80 ? 'var(--secondary)' : (ward.healthScore >= 50 ? 'var(--accent)' : 'var(--error)')};">
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
     </div>
 
     <div>
-        <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-users" style="color: var(--primary);"></i> Ward Heroes</h2>
-        <div class="stat-card" style="padding: 0;">
-            <table style="width: 100%; border-collapse: collapse;">
-                <c:forEach var="cit" items="${topCitizens}" varStatus="status">
-                    <tr style="border-bottom: 1px solid #f1f5f9;">
-                        <td style="padding: 1rem; width: 50px; font-weight: 800; color: var(--text-muted);">#${status.count}</td>
-                        <td style="padding: 1rem;">
-                            <div style="font-weight: 600;">${cit.username}</div>
-                            <div style="font-size: 0.75rem; color: var(--text-muted);">${cit.ward.name}</div>
-                        </td>
-                        <td style="padding: 1rem; text-align: right; font-weight: 800; color: var(--primary);">
-                            ${cit.karmaPoints} pts
-                        </td>
-                    </tr>
-                </c:forEach>
-                <c:if test="${empty topCitizens}">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 800;"><i class="fa-solid fa-crown" style="color: var(--accent);"></i> Community Heroes</h2>
+            <a href="#" style="font-size: 0.875rem; color: var(--secondary); font-weight: 600; text-decoration: none;">View All</a>
+        </div>
+
+        <div class="stat-card" style="padding: 0; overflow: hidden;">
+            <table>
+                <thead>
                     <tr>
-                        <td style="padding: 4rem; text-align: center; color: var(--text-muted);">
-                            No heroes yet. Start reporting to climb!
-                        </td>
+                        <th>Rank</th>
+                        <th>Citizen</th>
+                        <th>Ward</th>
+                        <th style="text-align: right;">Karma</th>
                     </tr>
-                </c:if>
+                </thead>
+                <tbody>
+                    <c:forEach var="cit" items="${topCitizens}" varStatus="status">
+                        <tr>
+                            <td style="font-weight: 800; color: var(--text-muted);">#${status.count}</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 2rem; height: 2rem; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; color: var(--primary);">
+                                        ${cit.username.substring(0,1).toUpperCase()}
+                                    </div>
+                                    <span style="font-weight: 600;">${cit.username}</span>
+                                </div>
+                            </td>
+                            <td style="font-size: 0.875rem; color: var(--text-muted);">${cit.ward.name}</td>
+                            <td style="text-align: right; font-weight: 800; color: var(--primary);">${cit.karmaPoints}</td>
+                        </tr>
+                    </c:forEach>
+                    <c:if test="${empty topCitizens}">
+                        <tr>
+                            <td colspan="4" style="padding: 4rem; text-align: center; color: var(--text-muted);">
+                                No heroes yet. Be the first to report!
+                            </td>
+                        </tr>
+                    </c:if>
+                </tbody>
             </table>
         </div>
     </div>

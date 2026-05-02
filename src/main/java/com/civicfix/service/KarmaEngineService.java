@@ -2,7 +2,7 @@ package com.civicfix.service;
 
 import com.civicfix.entity.KarmaTransaction;
 import com.civicfix.entity.User;
-import com.civicfix.dao.BaseDao;
+import com.civicfix.dao.KarmaTransactionDao;
 import com.civicfix.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class KarmaEngineService {
     private UserDao userDao;
     
     @Autowired
-    private BaseDao<KarmaTransaction, Long> karmaDao;
+    private KarmaTransactionDao karmaDao;
 
     @Transactional
     public void awardPoints(Long citizenId, int points, String reason) {
@@ -31,8 +31,7 @@ public class KarmaEngineService {
             transaction.setCitizen(citizen);
             transaction.setPoints(points);
             transaction.setReason(reason);
-            // We need a KarmaDaoImpl, or just use a generic BaseDao if we had one for it.
-            // I'll assume a generic one works for now or I'll create one.
+            karmaDao.save(transaction);
         }
     }
 }

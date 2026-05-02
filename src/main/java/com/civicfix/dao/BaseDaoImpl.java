@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional(readOnly = true)
 public abstract class BaseDaoImpl<T, ID extends Serializable> implements BaseDao<T, ID> {
 
     @Autowired
@@ -32,22 +35,26 @@ public abstract class BaseDaoImpl<T, ID extends Serializable> implements BaseDao
     }
 
     @Override
+    @Transactional
     @SuppressWarnings("unchecked")
     public ID save(T entity) {
         return (ID) getSession().save(entity);
     }
 
     @Override
+    @Transactional
     public void update(T entity) {
         getSession().update(entity);
     }
 
     @Override
+    @Transactional
     public void delete(T entity) {
         getSession().delete(entity);
     }
 
     @Override
+    @Transactional
     public void deleteById(ID id) {
         T entity = findById(id);
         if (entity != null) {

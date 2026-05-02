@@ -2,7 +2,7 @@ package com.civicfix.service;
 
 import com.civicfix.entity.Ward;
 import com.civicfix.entity.Complaint;
-import com.civicfix.dao.BaseDao;
+import com.civicfix.dao.WardDao;
 import com.civicfix.dao.ComplaintDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 public class WardHealthScoreService {
 
     @Autowired
-    private BaseDao<Ward, Long> wardDao;
+    private WardDao wardDao;
 
     @Autowired
     private ComplaintDao complaintDao;

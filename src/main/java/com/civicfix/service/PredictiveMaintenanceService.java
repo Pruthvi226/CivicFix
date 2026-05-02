@@ -4,7 +4,7 @@ import com.civicfix.entity.Complaint;
 import com.civicfix.entity.PredictiveFlag;
 import com.civicfix.entity.Ward;
 import com.civicfix.dao.ComplaintDao;
-import com.civicfix.dao.BaseDao;
+import com.civicfix.dao.PredictiveFlagDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +21,7 @@ public class PredictiveMaintenanceService {
     private ComplaintDao complaintDao;
 
     @Autowired
-    private BaseDao<PredictiveFlag, Long> predictiveDao;
+    private PredictiveFlagDao predictiveDao;
 
     @Autowired
     private DuplicateRadarService radarService;

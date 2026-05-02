@@ -4,7 +4,7 @@ import com.civicfix.entity.Complaint;
 import com.civicfix.entity.User;
 import com.civicfix.entity.Ward;
 import com.civicfix.dao.ComplaintDao;
-import com.civicfix.dao.BaseDao;
+import com.civicfix.dao.WardDao;
 import com.civicfix.service.ComplaintClassifierService;
 import com.civicfix.service.DuplicateRadarService;
 import com.civicfix.service.KarmaEngineService;
@@ -26,7 +26,7 @@ public class CitizenController {
     private ComplaintDao complaintDao;
 
     @Autowired
-    private BaseDao<Ward, Long> wardDao;
+    private WardDao wardDao;
 
     @Autowired
     private ComplaintClassifierService classifierService;

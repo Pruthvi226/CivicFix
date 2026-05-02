@@ -1,40 +1,70 @@
+<%@ include file="../common/taglibs.jsp" %>
 <c:set var="title" value="${title}" />
-<%@ include file="header.jsp" %>
+<%@ include file="../common/header.jsp" %>
 
-<div style="text-align: center; padding: 4rem 0;">
-    <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Fix Your City, <br> One Report at a Time.
-    </h1>
-    <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem;">
-        CivicFix+ uses AI to automatically classify your complaints and alerts the right officials instantly. 
-        Earn Karma points for building a better neighborhood.
-    </p>
-    <div style="display: flex; justify-content: center; gap: 1rem;">
-        <a href="<c:url value='/citizen/complaint/new'/>" class="btn btn-primary" style="width: auto; padding: 1rem 2.5rem; font-size: 1.125rem;">
-            Report an Issue
-        </a>
-        <a href="<c:url value='/leaderboard'/>" class="btn" style="width: auto; padding: 1rem 2.5rem; font-size: 1.125rem; background: white; border: 1px solid #e2e8f0;">
-            View Leaderboard
-        </a>
+<div style="padding: 5rem 0; border-bottom: 1px solid var(--border);">
+    <div style="max-width: 800px;">
+        <span style="background: #ecfdf5; color: #059669; padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.875rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block;">
+            <i class="fa-solid fa-sparkles"></i> AI-Powered Governance
+        </span>
+        <h1 style="font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--primary); letter-spacing: -0.04em;">
+            Building a <span style="color: var(--secondary);">Smarter</span>,<br> Better City Together.
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.6;">
+            CivicFix+ bridges the gap between citizens and officials. Report issues in seconds, 
+            track resolutions in real-time, and earn rewards for your contribution.
+        </p>
+        <div style="display: flex; gap: 1rem;">
+            <a href="<c:url value='/citizen/complaint/new'/>" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
+                Report an Issue
+            </a>
+            <a href="<c:url value='/register'/>" class="btn btn-outline" style="padding: 1rem 2rem; font-size: 1rem;">
+                Join the Mission
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="dashboard-grid">
-    <div class="stat-card">
-        <i class="fa-solid fa-robot" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
-        <h3>AI Classification</h3>
-        <p style="color: var(--text-muted); margin-top: 0.5rem;">Our rule-based NLP instantly detects category and severity as you type.</p>
-    </div>
-    <div class="stat-card">
-        <i class="fa-solid fa-radar" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
-        <h3>Duplicate Radar</h3>
-        <p style="color: var(--text-muted); margin-top: 0.5rem;">Prevent redundant reports with our GPS-based proximity tracking.</p>
-    </div>
-    <div class="stat-card">
-        <i class="fa-solid fa-trophy" style="font-size: 2rem; color: var(--success); margin-bottom: 1rem;"></i>
-        <h3>Karma System</h3>
-        <p style="color: var(--text-muted); margin-top: 0.5rem;">Get rewarded for reporting, upvoting, and verifying resolutions.</p>
+<div style="padding: 5rem 0;">
+    <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem; font-weight: 800;">How CivicFix+ Works</h2>
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <div style="background: #f1f5f9; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <i class="fa-solid fa-camera" style="font-size: 1.5rem; color: var(--primary);"></i>
+            </div>
+            <h3>1. Snap & Report</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Describe the issue. Our AI instantly detects category and severity to route it to the right department.</p>
+        </div>
+        <div class="stat-card">
+            <div style="background: #f1f5f9; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <i class="fa-solid fa-route" style="font-size: 1.5rem; color: var(--secondary);"></i>
+            </div>
+            <h3>2. Transparent Tracking</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Watch your report move from 'Assigned' to 'Resolved' with photo proof from field workers.</p>
+        </div>
+        <div class="stat-card">
+            <div style="background: #f1f5f9; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <i class="fa-solid fa-medal" style="font-size: 1.5rem; color: var(--accent);"></i>
+            </div>
+            <h3>3. Earn Karma</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Verify resolutions and upvote others to earn Karma points and city-wide recognition.</p>
+        </div>
     </div>
 </div>
 
-<%@ include file="footer.jsp" %>
+<div style="background: var(--primary); color: white; padding: 4rem; border-radius: 1.5rem; margin-bottom: 5rem; display: flex; justify-content: space-around; text-align: center;">
+    <div>
+        <div style="font-size: 2.5rem; font-weight: 800;">98%</div>
+        <div style="opacity: 0.8; font-size: 0.875rem; text-transform: uppercase; margin-top: 0.5rem;">Resolution Rate</div>
+    </div>
+    <div>
+        <div style="font-size: 2.5rem; font-weight: 800;">2.4k</div>
+        <div style="opacity: 0.8; font-size: 0.875rem; text-transform: uppercase; margin-top: 0.5rem;">Active Citizens</div>
+    </div>
+    <div>
+        <div style="font-size: 2.5rem; font-weight: 800;">45m</div>
+        <div style="opacity: 0.8; font-size: 0.875rem; text-transform: uppercase; margin-top: 0.5rem;">Avg Response Time</div>
+    </div>
+</div>
+
+<%@ include file="../common/footer.jsp" %>

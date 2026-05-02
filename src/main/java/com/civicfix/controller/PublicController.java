@@ -2,7 +2,7 @@ package com.civicfix.controller;
 
 import com.civicfix.entity.Ward;
 import com.civicfix.entity.User;
-import com.civicfix.dao.BaseDao;
+import com.civicfix.dao.WardDao;
 import com.civicfix.dao.UserDao;
 import com.civicfix.service.WhistleblowerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class PublicController {
 
     @Autowired
-    private BaseDao<Ward, Long> wardDao;
+    private WardDao wardDao;
 
     @Autowired
     private UserDao userDao;
