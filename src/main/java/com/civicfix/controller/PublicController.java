@@ -25,11 +25,6 @@ public class PublicController {
     @Autowired
     private WhistleblowerService whistleblowerService;
 
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("title", "Home");
-        return "public/index";
-    }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
