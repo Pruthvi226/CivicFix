@@ -99,5 +99,30 @@ CREATE TABLE whistleblower_reports (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- 7. NOTIFICATIONS
+CREATE TABLE notifications (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 -- Seed Initial Data
 INSERT INTO wards (name, city_zone) VALUES ('North Ward', 'Zone A'), ('Central Ward', 'Zone B'), ('South Ward', 'Zone C');
+
+-- 7. PERKS
+CREATE TABLE perks (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    cost_karma INT NOT NULL,
+    icon_class VARCHAR(255),
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+INSERT INTO perks (name, description, cost_karma, icon_class) VALUES 
+('Free Coffee', 'Get a free coffee at a local partner cafe.', 50, 'fa-coffee'),
+('Public Transit Pass', 'One day free public transit pass.', 150, 'fa-bus'),
+('VIP City Event Ticket', 'Exclusive ticket to the upcoming city festival.', 500, 'fa-ticket-alt');

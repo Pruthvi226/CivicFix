@@ -13,6 +13,11 @@
     </div>
 </c:if>
 
+<!-- Map Section -->
+<div style="margin-bottom: 2rem; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <div id="taskMap" style="width: 100%; height: 400px;"></div>
+</div>
+
 <div class="dashboard-grid">
     <c:forEach var="task" items="${tasks}">
         <div class="stat-card" style="display: flex; flex-direction: column; gap: 1.25rem;">
@@ -53,5 +58,35 @@
         </div>
     </c:if>
 </div>
+
+<!-- Leaflet.js -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const taskData = ${mapDataJson};
+
+        // Default center on India
+        let defaultLat = 20.5937, defaultLng = 78.9629, defaultZoom = 5;
+        if (taskData.length > 0) {
+            defaultLat = taskData[0].lat;
+            defaultLng = taskData[0].lng;
+            defaultZoom = 13;
+        }
+
+        const map = L.map('taskMap').setView([defaultLat, defaultLng], defaultZoom);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        taskData.forEach(function(task) {
+            const marker = L.marker([task.lat, task.lng]).addTo(map);
+            marker.bindPopup(
+                '<strong>#CF-' + task.id + ' — ' + task.category + '</strong><br>' + task.address
+            );
+        });
+    });
+</script>
 
 <%@ include file="../common/footer.jsp" %>

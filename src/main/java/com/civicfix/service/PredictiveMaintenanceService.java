@@ -2,7 +2,6 @@ package com.civicfix.service;
 
 import com.civicfix.entity.Complaint;
 import com.civicfix.entity.PredictiveFlag;
-import com.civicfix.entity.Ward;
 import com.civicfix.dao.ComplaintDao;
 import com.civicfix.dao.PredictiveFlagDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service

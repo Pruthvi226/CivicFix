@@ -18,7 +18,9 @@
             <c:forEach var="ward" items="${wards}">
                 <div>
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; align-items: flex-end;">
-                        <span style="font-weight: 700; font-size: 1.125rem;">${ward.name}</span>
+                        <a href="<c:url value='/ward/${ward.id}'/>" style="font-weight: 700; font-size: 1.125rem; color: inherit; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--secondary)'" onmouseout="this.style.borderColor='transparent'">
+                            ${ward.name}
+                        </a>
                         <span style="font-weight: 800; color: ${ward.healthScore >= 80 ? 'var(--secondary)' : (ward.healthScore >= 50 ? 'var(--accent)' : 'var(--error)')};">
                             ${ward.healthScore}%
                         </span>

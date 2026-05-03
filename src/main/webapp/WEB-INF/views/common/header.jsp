@@ -30,6 +30,7 @@
             </a>
             <div class="nav-links">
                 <a href="<c:url value='/leaderboard'/>">City Health</a>
+                <a href="<c:url value='/transparency'/>">Transparency</a>
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
                         <c:if test="${sessionScope.user.role == 'CITIZEN'}">

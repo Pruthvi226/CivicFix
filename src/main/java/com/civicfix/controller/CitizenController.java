@@ -2,7 +2,6 @@ package com.civicfix.controller;
 
 import com.civicfix.entity.Complaint;
 import com.civicfix.entity.User;
-import com.civicfix.entity.Ward;
 import com.civicfix.dao.ComplaintDao;
 import com.civicfix.dao.WardDao;
 import com.civicfix.service.ComplaintClassifierService;
@@ -10,7 +9,6 @@ import com.civicfix.service.DuplicateRadarService;
 import com.civicfix.service.KarmaEngineService;
 import com.civicfix.dto.ClassificationResponse;
 import com.civicfix.dto.LocationDto;
-import com.civicfix.entity.Perk;
 import com.civicfix.service.PerkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,13 +40,34 @@ public class CitizenController {
     @Autowired
     private PerkService perkService;
 
+    @Autowired
+    private com.civicfix.dao.KarmaTransactionDao karmaTransactionDao;
+
+    @Autowired
+    private com.civicfix.dao.NotificationDao notificationDao;
+
+    @GetMapping("/karma-history")
+    public String karmaHistory(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        model.addAttribute("transactions", karmaTransactionDao.findByCitizenId(user.getId()));
+        model.addAttribute("userKarma", user.getKarmaPoints());
+        model.addAttribute("title", "Karma Ledger");
+        return "citizen/karma-history";
+    }
+
     @GetMapping("/dashboard")
     public String dashboard(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
-        if (user == null) return "redirect:/login";
+        if (user == null || user.getRole() != User.UserRole.CITIZEN) return "redirect:/login";
         
         List<Complaint> myComplaints = complaintDao.findByCitizenId(user.getId());
+        java.util.List<com.civicfix.entity.Notification> notifications = notificationDao.findUnreadByUserId(user.getId());
+        
         model.addAttribute("complaints", myComplaints);
+        model.addAttribute("notifications", notifications);
+        model.addAttribute("notificationCount", notifications.size());
         model.addAttribute("title", "Citizen Dashboard");
         return "citizen/dashboard";
     }

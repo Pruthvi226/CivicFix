@@ -11,6 +11,9 @@
         <a href="<c:url value='/official/heatmap'/>" class="btn btn-outline" style="padding: 0.75rem 1.5rem; border-color: var(--secondary); color: var(--secondary);">
             <i class="fa-solid fa-fire-flame-curved"></i> AI Heatmap
         </a>
+        <a href="<c:url value='/official/export'/>" class="btn btn-outline" style="padding: 0.75rem 1.5rem; border-color: #16a34a; color: #16a34a;">
+            <i class="fa-solid fa-file-csv"></i> Export CSV
+        </a>
         <div class="stat-card" style="padding: 0.75rem 1.5rem; border-color: var(--secondary);">
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">Active Workers</div>
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--secondary);">${workers.size()}</div>
@@ -18,7 +21,7 @@
         <div class="stat-card" style="padding: 0.75rem 1.5rem; border-color: var(--accent);">
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">Pending Issues</div>
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">
-                ${complaints.stream().filter(c -> c.status == 'OPEN' || c.status == 'REOPENED').count()}
+                ${pendingCount}
             </div>
         </div>
     </div>

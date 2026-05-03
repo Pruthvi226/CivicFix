@@ -192,6 +192,9 @@ nav {
     border: 1px solid #dcfce7;
 }
 
+.text-success { color: var(--success) !important; }
+.text-error { color: var(--error) !important; }
+
 /* Badges */
 .badge {
     padding: 0.25rem 0.5rem;

@@ -68,10 +68,12 @@
         <session-timeout>60</session-timeout>
     </session-config>
 
-    <!-- 7. Welcome file -->
+    <!-- 7. Welcome file removed to let Spring handle the root path -->
+    <!-- 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    -->
 
     <!-- 8. Error pages -->
     <error-page>

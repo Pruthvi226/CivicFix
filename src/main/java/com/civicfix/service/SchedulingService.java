@@ -39,7 +39,6 @@ public class SchedulingService {
 
         for (Complaint complaint : openComplaints) {
             User bestWorker = null;
-            double minDistance = Double.MAX_VALUE;
 
             for (User worker : workers) {
                 // Simplified: Check distance to worker's last assigned (or current) task

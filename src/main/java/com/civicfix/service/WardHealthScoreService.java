@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.stream.Collectors;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -54,7 +55,7 @@ public class WardHealthScoreService {
             score += (verifiedCount * 2.0); 
             
             score = Math.max(0, Math.min(100, score));
-            BigDecimal finalScore = new BigDecimal(score).setScale(2, BigDecimal.ROUND_HALF_UP);
+            BigDecimal finalScore = new BigDecimal(score).setScale(2, RoundingMode.HALF_UP);
             
             ward.setHealthScore(finalScore);
             wardDao.update(ward);

@@ -8,4 +8,14 @@ public class KarmaTransactionDaoImpl extends BaseDaoImpl<KarmaTransaction, Long>
     public KarmaTransactionDaoImpl() {
         super(KarmaTransaction.class);
     }
+
+    @Override
+    public java.util.List<KarmaTransaction> findByCitizenId(Long citizenId) {
+        org.hibernate.Session session = sessionFactory.getCurrentSession();
+        org.hibernate.query.Query<KarmaTransaction> query = session.createQuery(
+                "FROM KarmaTransaction WHERE citizen.id = :citizenId ORDER BY createdAt DESC", 
+                KarmaTransaction.class);
+        query.setParameter("citizenId", citizenId);
+        return query.getResultList();
+    }
 }

@@ -26,13 +26,14 @@ public class AuthFilter implements Filter {
         String path = request.getServletPath();
 
         // 1. Whitelist public paths that do NOT require authentication
-        if (path.equals("/health") ||
-            path.equals("/") ||
+        if (path == null || path.isEmpty() || path.equals("/") ||
+            path.equals("/health") ||
             path.equals("/home") ||
+            path.equals("/leaderboard") ||
+            path.equals("/transparency") ||
             path.equals("/index.jsp") ||
             path.startsWith("/login") ||
             path.startsWith("/register") ||
-            path.startsWith("/public/") ||
             path.startsWith("/resources/")) {
             
             chain.doFilter(req, res); // Whitelisted, let it through
