@@ -9,7 +9,7 @@
     </div>
 
     <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start;">
-        <form action="<c:url value='/citizen/complaint/submit'/>" method="post" id="complaintForm">
+        <form action="<c:url value='/citizen/complaint/submit'/>" method="post" id="complaintForm" enctype="multipart/form-data">
             <div class="stat-card" style="display: flex; flex-direction: column; gap: 1.5rem;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label for="description">Describe the issue in plain language</label>
@@ -70,6 +70,12 @@
                 <div class="form-group" style="margin-bottom: 0;">
                     <label for="address">Full Address / Landmark</label>
                     <input type="text" id="address" name="address" placeholder="e.g. Near HDFC Bank ATM, 5th Cross" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="evidenceFile">Upload Evidence (Photo / Document)</label>
+                    <input type="file" id="evidenceFile" name="evidenceFile" accept=".jpg,.jpeg,.png,.pdf" style="padding: 0.5rem; border: 1px dashed var(--border); border-radius: 0.5rem; width: 100%;">
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Max file size: 10MB. Formats: JPG, PNG, PDF.</p>
                 </div>
 
                 <input type="hidden" id="estimatedFixTime" name="estimatedFixTime" value="72">

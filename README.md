@@ -15,11 +15,10 @@
 
 ---
 
-## 🛠️ Technical Stack
-
--   **Backend:** Java 11, Spring MVC 5.x, Hibernate ORM 5.x
+-   **Backend:** Java 21, Spring MVC 5.x, Hibernate ORM 5.x
 -   **Database:** MySQL 8.x
 -   **Frontend:** JSP, JSTL, Vanilla CSS (Premium Modern Design)
+-   **Testing:** JUnit 5, Mockito 5, Byte Buddy (Java 21+ support)
 -   **Build Tool:** Maven
 -   **Deployment:** Docker-ready (Render, Railway, or AWS)
 
@@ -48,6 +47,13 @@ This project is pre-configured for Render via `render.yaml` and `Dockerfile`.
 1.  Push code to GitHub.
 2.  Connect repository to **Render Blueprint**.
 3.  Set `DB_URL`, `DB_USER`, and `DB_PASSWORD` in the Render dashboard.
+
+### 🧪 Automated Testing
+Run the comprehensive test suite (Unit + Integration):
+```bash
+mvn clean test
+```
+*Note: Uses experimental Byte Buddy flags for full compatibility with Java 21/25 runtimes.*
 
 ---
 

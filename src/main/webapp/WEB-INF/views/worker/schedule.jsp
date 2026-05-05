@@ -23,7 +23,7 @@
         <div class="stat-card" style="display: flex; flex-direction: column; gap: 1.25rem;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <span class="badge" style="background: #eff6ff; color: #1d4ed8;">#CF-${task.id}</span>
-                <span class="badge" style="background: ${task.severity == 'CRITICAL' ? '#fee2e2' : '#f1f5f9'}; color: ${task.severity == 'CRITICAL' ? '#ef4444' : 'var(--text-main)'};">
+                <span class="badge badge-${fn:toLowerCase(task.severity)}">
                     ${task.severity}
                 </span>
             </div>
@@ -38,10 +38,10 @@
                 <div><i class="fa-solid fa-map" style="color: var(--secondary);"></i> ${task.latitude}, ${task.longitude}</div>
             </div>
 
-            <form action="<c:url value='/worker/complaint/${task.id}/resolve'/>" method="post" style="margin-top: auto;">
+            <form action="<c:url value='/worker/complaint/${task.id}/resolve'/>" method="post" enctype="multipart/form-data" style="margin-top: auto;">
                 <div class="form-group" style="margin-bottom: 1rem;">
-                    <label style="font-size: 0.75rem;">Resolution Photo URL (Proof)</label>
-                    <input type="text" name="photo" placeholder="https://image-hosting.com/fix-123.jpg" required>
+                    <label style="font-size: 0.75rem;">Upload Resolution Proof (Photo)</label>
+                    <input type="file" name="resolutionFile" accept="image/*" required style="padding: 0.5rem; border: 1px dashed var(--border); width: 100%;">
                 </div>
                 <button type="submit" class="btn btn-secondary" style="width: 100%;">
                     <i class="fa-solid fa-check-double"></i> Mark as Resolved
@@ -59,12 +59,15 @@
     </c:if>
 </div>
 
+<!-- Hidden JSON Data for JS -->
+<script id="mapData" type="application/json">${not empty mapDataJson ? mapDataJson : '[]'}</script>
+
 <!-- Leaflet.js -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const taskData = ${mapDataJson};
+        const taskData = JSON.parse(document.getElementById('mapData').textContent);
 
         // Default center on India
         let defaultLat = 20.5937, defaultLng = 78.9629, defaultZoom = 5;

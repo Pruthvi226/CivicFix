@@ -19,14 +19,11 @@
     
     <div class="heatmap-grid fade-in">
         <c:forEach var="ward" items="${wards}">
-            <c:set var="color" value="#10b981" />
-            <c:set var="bg" value="#f0fdf4" />
-            <c:if test="${ward.healthScore < 80}"><c:set var="color" value="#f59e0b" /><c:set var="bg" value="#fffbeb" /></c:if>
-            <c:if test="${ward.healthScore < 50}"><c:set var="color" value="#ef4444" /><c:set var="bg" value="#fef2f2" /></c:if>
+            <c:set var="statusClass" value="${ward.healthScore >= 80 ? 'heatmap-healthy' : (ward.healthScore >= 50 ? 'heatmap-caution' : 'heatmap-risk')}" />
             
-            <div class="heatmap-cell" style="background: ${bg}; border: 2px solid ${color}44;">
+            <div class="heatmap-cell ${statusClass}">
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">${ward.name}</div>
-                <div style="font-size: 1.5rem; font-weight: 800; color: ${color};">${ward.healthScore}%</div>
+                <div class="text-800" style="font-size: 1.5rem;">${ward.healthScore}%</div>
                 <div style="font-size: 0.65rem; font-weight: 600; margin-top: 0.5rem; opacity: 0.8;">
                     <c:choose>
                         <c:when test="${ward.healthScore < 50}">IMMINENT RISK</c:when>

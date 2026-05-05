@@ -56,6 +56,7 @@ CREATE TABLE complaints (
     resolved_at TIMESTAMP NULL,
     verification_status ENUM('PENDING', 'ACCEPTED', 'REJECTED') NULL,
     rejection_reason TEXT,
+    evidence_file_path VARCHAR(512),
     reported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (citizen_id) REFERENCES users(id),
@@ -64,6 +65,8 @@ CREATE TABLE complaints (
 );
 CREATE INDEX idx_complaints_status ON complaints(status);
 CREATE INDEX idx_complaints_ward ON complaints(ward_id);
+CREATE INDEX idx_complaints_category ON complaints(category);
+CREATE INDEX idx_complaints_severity ON complaints(severity);
 
 -- 4. KARMA TRANSACTIONS
 CREATE TABLE karma_transactions (

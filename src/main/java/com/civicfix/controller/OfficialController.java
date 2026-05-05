@@ -16,7 +16,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("/official")
 public class OfficialController {
+
+    @GetMapping("/ping")
+    @ResponseBody
+    public String ping() { return "OfficialController is ACTIVE"; }
+
+    @ExceptionHandler(Exception.class)
+    public String handleException(Exception e, Model model) {
+        System.err.println("OFFICIAL CONTROLLER ERROR: " + e.getMessage());
+        e.printStackTrace();
+        model.addAttribute("error", e.getMessage());
+        return "error";
+    }
 
     @Autowired
     private ComplaintDao complaintDao;
@@ -27,18 +40,19 @@ public class OfficialController {
     @Autowired
     private WardDao wardDao;
 
-    @GetMapping("/official/dashboard")
+    @GetMapping("/dashboard")
     public String dashboard(HttpSession session, Model model) {
+        System.out.println("--- Entering Official Dashboard Mapping ---");
         User official = (User) session.getAttribute("user");
         if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
 
         List<Complaint> allComplaints = complaintDao.findAll();
         List<User> workers = userDao.findAll().stream()
-            .filter(u -> u.getRole() == User.UserRole.WORKER)
+            .filter(u -> u != null && u.getRole() != null && u.getRole() == User.UserRole.WORKER)
             .collect(Collectors.toList());
 
         long pendingCount = allComplaints.stream()
-            .filter(c -> c.getStatus() == Complaint.Status.OPEN || c.getStatus() == Complaint.Status.REOPENED)
+            .filter(c -> c != null && c.getStatus() != null && (c.getStatus() == Complaint.Status.OPEN || c.getStatus() == Complaint.Status.REOPENED))
             .count();
 
         model.addAttribute("complaints", allComplaints);
@@ -50,7 +64,64 @@ public class OfficialController {
         return "official/dashboard";
     }
 
-    @GetMapping("/official/heatmap")
+    @GetMapping("/search")
+    public String search(@RequestParam(required = false) String query, HttpSession session, Model model) {
+        User official = (User) session.getAttribute("user");
+        if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
+
+        if (query == null || query.trim().isEmpty()) {
+            return "redirect:/official/dashboard";
+        }
+
+        List<Complaint> results = complaintDao.findAll().stream()
+            .filter(c -> (c.getDescription() != null && c.getDescription().toLowerCase().contains(query.toLowerCase())) ||
+                         (c.getAddress() != null && c.getAddress().toLowerCase().contains(query.toLowerCase())) ||
+                         c.getId().toString().equals(query))
+            .collect(Collectors.toList());
+
+        model.addAttribute("complaints", results);
+        model.addAttribute("workers", userDao.findAll().stream().filter(u -> u.getRole() == User.UserRole.WORKER).collect(Collectors.toList()));
+        model.addAttribute("wards", wardDao.findAll());
+        model.addAttribute("title", "Search Results for: " + query);
+        return "official/dashboard";
+    }
+
+    @GetMapping("/advancedSearch")
+    public String advancedSearch(@RequestParam(required = false) String status,
+                                 @RequestParam(required = false) String category,
+                                 @RequestParam(required = false) Long wardId,
+                                 @RequestParam(required = false) String severity,
+                                 HttpSession session, Model model) {
+        User official = (User) session.getAttribute("user");
+        if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
+
+        List<Complaint> results = complaintDao.findByCriteria(status, category, wardId, severity);
+
+        model.addAttribute("complaints", results);
+        model.addAttribute("workers", userDao.findAll().stream().filter(u -> u.getRole() == User.UserRole.WORKER).collect(Collectors.toList()));
+        model.addAttribute("wards", wardDao.findAll());
+        model.addAttribute("title", "Advanced Search Results");
+        return "official/dashboard";
+    }
+
+    @GetMapping("/audit")
+    public String cityAudit(HttpSession session, Model model) {
+        User official = (User) session.getAttribute("user");
+        if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
+
+        List<Ward> wards = wardDao.findAll();
+        List<Complaint> all = complaintDao.findAll();
+
+        // Calculate some audit metrics
+        model.addAttribute("wards", wards);
+        model.addAttribute("totalComplaints", all.size());
+        model.addAttribute("resolvedCount", all.stream().filter(c -> c.getStatus() == Complaint.Status.VERIFIED).count());
+        model.addAttribute("title", "City Performance Audit");
+        
+        return "official/audit";
+    }
+
+    @GetMapping("/heatmap")
     public String showHeatmap(HttpSession session, Model model) {
         User official = (User) session.getAttribute("user");
         if (official == null || official.getRole() != User.UserRole.OFFICIAL) return "redirect:/login";
@@ -61,7 +132,7 @@ public class OfficialController {
         return "official/heatmap";
     }
 
-    @PostMapping("/official/complaint/{id}/assign")
+    @PostMapping("/complaint/{id}/assign")
     public String assignWorker(@PathVariable Long id, @RequestParam Long workerId) {
         Complaint complaint = complaintDao.findById(id);
         User worker = userDao.findById(workerId);
@@ -75,7 +146,7 @@ public class OfficialController {
         
         return "redirect:/official/dashboard?error=Assignment failed";
     }
-    @GetMapping("/official/export")
+    @GetMapping("/export")
     public void exportCsv(HttpSession session, javax.servlet.http.HttpServletResponse response) throws java.io.IOException {
         User official = (User) session.getAttribute("user");
         if (official == null || official.getRole() != User.UserRole.OFFICIAL) {

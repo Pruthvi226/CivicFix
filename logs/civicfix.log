@@ -1,0 +1,494 @@
+2026-05-05 18:39:11 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-05 18:39:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-05 18:39:12 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-05 18:39:12 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:160)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:155)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:146)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:746)
+	at org.springframework.orm.hibernate5.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:616)
+	at org.springframework.orm.hibernate5.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:1049)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:624)
+	at org.eclipse.jetty.server.handler.ContextHandler.contextInitialized(ContextHandler.java:984)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:740)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:392)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1304)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:901)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:306)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:532)
+	at org.eclipse.jetty.maven.plugin.MavenWebAppContext.doStart(MavenWebAppContext.java:294)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:171)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:121)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:89)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:171)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:121)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:89)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:171)
+	at org.eclipse.jetty.server.Server.start(Server.java:470)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:415)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at org.eclipse.jetty.maven.plugin.JettyEmbedder.doStart(JettyEmbedder.java:223)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.startJettyEmbedded(JettyRunMojo.java:97)
+	at org.eclipse.jetty.maven.plugin.AbstractWebAppMojo.startJetty(AbstractWebAppMojo.java:441)
+	at org.eclipse.jetty.maven.plugin.AbstractWebAppMojo.execute(AbstractWebAppMojo.java:419)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:85)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 100 common frames omitted
+2026-05-05 18:39:12 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2026-05-05 18:39:13 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-05 18:39:13 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 1630 ms
+2026-05-05 18:39:13 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+2026-05-05 18:39:13 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-05-05 18:39:14 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 415 ms
+2026-05-05 18:39:38 [qtp1662140450-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 990 ms
+2026-05-05 18:39:38 [qtp1662140450-52] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /login took 990 ms
+2026-05-05 18:39:38 [qtp1662140450-48] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 5 ms
+2026-05-05 18:39:57 [qtp1662140450-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 942 ms
+2026-05-05 18:39:57 [qtp1662140450-45] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] / took 942 ms
+2026-05-05 18:39:57 [qtp1662140450-48] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 32 ms
+2026-05-05 18:40:05 [qtp1662140450-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 710 ms
+2026-05-05 18:40:05 [qtp1662140450-45] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /register took 710 ms
+2026-05-05 18:40:05 [qtp1662140450-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 31 ms
+2026-05-05 18:40:26 [qtp1662140450-48] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2026-05-05 18:40:26 [qtp1662140450-48] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2026-05-05 18:40:26 [qtp1662140450-48] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 485 ms
+2026-05-05 18:40:26 [qtp1662140450-48] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 26 ms
+2026-05-05 18:41:03 [qtp1662140450-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 22 ms
+2026-05-05 18:41:03 [qtp1662140450-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 28 ms
+2026-05-05 18:41:16 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 23 ms
+2026-05-05 18:41:16 [qtp1662140450-56] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 9 ms
+2026-05-05 18:41:26 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 24 ms
+2026-05-05 18:41:26 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 10 ms
+2026-05-05 18:41:50 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 26 ms
+2026-05-05 18:41:50 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 11 ms
+2026-05-05 18:42:10 [qtp1662140450-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /whistleblower took 597 ms
+2026-05-05 18:42:10 [qtp1662140450-50] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /whistleblower took 597 ms
+2026-05-05 18:42:10 [qtp1662140450-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 31 ms
+2026-05-05 18:42:41 [qtp1662140450-54] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2026-05-05 18:42:41 [qtp1662140450-54] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
+2026-05-05 18:42:41 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /whistleblower/submit took 67 ms
+2026-05-05 18:42:41 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 18:42:48 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 34 ms
+2026-05-05 18:42:48 [qtp1662140450-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 11 ms
+2026-05-05 19:27:36 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-05 19:27:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-05 19:27:37 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-05 19:27:38 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-05-05 19:27:39 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-05 19:27:39 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 3955 ms
+2026-05-05 19:27:40 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+2026-05-05 19:27:40 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-05-05 19:27:41 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 938 ms
+2026-05-05 19:28:30 [qtp568221863-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 867 ms
+2026-05-05 19:28:30 [qtp568221863-42] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] / took 867 ms
+2026-05-05 19:28:31 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 412 ms
+2026-05-05 19:28:37 [qtp568221863-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 734 ms
+2026-05-05 19:28:37 [qtp568221863-51] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /register took 734 ms
+2026-05-05 19:28:37 [qtp568221863-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 30 ms
+2026-05-05 19:28:55 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 385 ms
+2026-05-05 19:28:55 [qtp568221863-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 26 ms
+2026-05-05 19:28:55 [qtp568221863-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 5 ms
+2026-05-05 19:29:35 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 82 ms
+2026-05-05 19:29:35 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 8 ms
+2026-05-05 19:29:43 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 13 ms
+2026-05-05 19:29:43 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 19:30:04 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 16 ms
+2026-05-05 19:30:04 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 18 ms
+2026-05-05 19:30:05 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 4 ms
+2026-05-05 19:30:19 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 6 ms
+2026-05-05 19:30:20 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 772 ms
+2026-05-05 19:30:20 [qtp568221863-44] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /citizen/dashboard took 772 ms
+2026-05-05 19:30:20 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /favicon.ico took 5 ms
+2026-05-05 19:30:33 [qtp568221863-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 399 ms
+2026-05-05 19:31:11 [qtp568221863-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 142 ms
+2026-05-05 19:33:55 [qtp568221863-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 431 ms
+2026-05-05 19:34:06 [qtp568221863-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 413 ms
+2026-05-05 19:34:16 [qtp568221863-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 31 ms
+2026-05-05 19:34:28 [qtp568221863-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 25 ms
+2026-05-05 19:41:46 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-05 19:41:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-05 19:41:48 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-05 19:41:49 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-05-05 19:41:50 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-05 19:41:51 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 4852 ms
+2026-05-05 19:41:51 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+2026-05-05 19:41:51 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-05-05 19:41:53 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1749 ms
+2026-05-05 19:42:12 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 1876 ms
+2026-05-05 19:42:12 [qtp1780694323-42] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /register took 1876 ms
+2026-05-05 19:43:10 [qtp1780694323-45] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 145 ms
+2026-05-05 19:43:12 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 1487 ms
+2026-05-05 19:43:12 [qtp1780694323-44] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /login took 1487 ms
+2026-05-05 19:43:18 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 30 ms
+2026-05-05 19:43:48 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 22 ms
+2026-05-05 19:43:48 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 34 ms
+2026-05-05 19:44:10 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 69 ms
+2026-05-05 19:44:11 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 918 ms
+2026-05-05 19:44:11 [qtp1780694323-42] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /official/dashboard took 918 ms
+2026-05-05 19:44:28 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 4 ms
+2026-05-05 19:44:28 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 34 ms
+2026-05-05 19:44:56 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 65 ms
+2026-05-05 19:44:59 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 3026 ms
+2026-05-05 19:44:59 [qtp1780694323-43] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /worker/schedule took 3026 ms
+2026-05-05 19:45:28 [qtp1780694323-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/dashboard took 1735 ms
+2026-05-05 19:45:28 [qtp1780694323-44] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /worker/dashboard took 1735 ms
+2026-05-05 19:57:44 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 535 ms
+2026-05-05 19:57:44 [qtp1780694323-43] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /register took 535 ms
+2026-05-05 19:57:48 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/history took 554 ms
+2026-05-05 19:57:48 [qtp1780694323-62] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /worker/history took 554 ms
+2026-05-05 19:57:55 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/dashboard took 391 ms
+2026-05-05 19:57:58 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 458 ms
+2026-05-05 19:58:29 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 18 ms
+2026-05-05 19:58:29 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 504 ms
+2026-05-05 19:58:29 [qtp1780694323-62] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /login took 504 ms
+2026-05-05 19:58:35 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 21 ms
+2026-05-05 19:58:56 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 20 ms
+2026-05-05 19:58:56 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 30 ms
+2026-05-05 19:59:08 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 22 ms
+2026-05-05 19:59:29 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 16 ms
+2026-05-05 19:59:29 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 40 ms
+2026-05-05 19:59:48 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 9 ms
+2026-05-05 19:59:49 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 808 ms
+2026-05-05 19:59:49 [qtp1780694323-62] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /citizen/dashboard took 808 ms
+2026-05-05 19:59:57 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 434 ms
+2026-05-05 20:00:27 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 225 ms
+2026-05-05 20:01:03 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 102 ms
+2026-05-05 20:01:03 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 99 ms
+2026-05-05 20:01:17 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 1 ms
+2026-05-05 20:01:17 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 23 ms
+2026-05-05 20:01:29 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:01:29 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 37 ms
+2026-05-05 20:01:35 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 3 ms
+2026-05-05 20:01:35 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:01:43 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 1 ms
+2026-05-05 20:01:43 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 20 ms
+2026-05-05 20:01:55 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 13 ms
+2026-05-05 20:01:55 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 40 ms
+2026-05-05 20:02:05 [qtp1780694323-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:02:05 [qtp1780694323-63] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:02:05 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 21 ms
+2026-05-05 20:02:27 [qtp1780694323-63] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 14 ms
+2026-05-05 20:02:27 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 20 ms
+2026-05-05 20:02:39 [qtp1780694323-63] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:02:39 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 36 ms
+2026-05-05 20:02:45 [qtp1780694323-63] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 22 ms
+2026-05-05 20:02:53 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:02:53 [qtp1780694323-63] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 17 ms
+2026-05-05 20:03:08 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 21 ms
+2026-05-05 20:03:29 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 19 ms
+2026-05-05 20:03:29 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 26 ms
+2026-05-05 20:03:42 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 9 ms
+2026-05-05 20:03:42 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 25 ms
+2026-05-05 20:03:53 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 3 ms
+2026-05-05 20:03:53 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:03:54 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 17 ms
+2026-05-05 20:04:24 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 33 ms
+2026-05-05 20:04:24 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 41 ms
+2026-05-05 20:04:38 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:05:04 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints took 14 ms
+2026-05-05 20:05:10 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 354 ms
+2026-05-05 20:05:22 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 41 ms
+2026-05-05 20:05:34 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/search took 11 ms
+2026-05-05 20:05:52 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 425 ms
+2026-05-05 20:05:59 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 44 ms
+2026-05-05 20:06:05 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 534 ms
+2026-05-05 20:06:05 [qtp1780694323-42] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /official/heatmap took 534 ms
+2026-05-05 20:06:11 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 38 ms
+2026-05-05 20:06:17 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/advanced-search took 4 ms
+2026-05-05 20:06:38 [qtp1780694323-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/tasks took 3 ms
+2026-05-05 20:06:54 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 1188 ms
+2026-05-05 20:06:54 [qtp1780694323-54] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] / took 1188 ms
+2026-05-05 20:07:15 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:07:15 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 24 ms
+2026-05-05 20:07:21 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 27 ms
+2026-05-05 20:07:32 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 21 ms
+2026-05-05 20:07:44 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:07:54 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/assign took 4 ms
+2026-05-05 20:08:49 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 33 ms
+2026-05-05 20:08:55 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit/search took 3 ms
+2026-05-05 20:09:01 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /search took 3 ms
+2026-05-05 20:09:10 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 30 ms
+2026-05-05 20:09:42 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 39 ms
+2026-05-05 20:10:05 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaint/assign/1 took 4 ms
+2026-05-05 20:10:12 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints/assign/1 took 3 ms
+2026-05-05 20:10:17 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaint/1 took 3 ms
+2026-05-05 20:10:38 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 1 ms
+2026-05-05 20:10:38 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 24 ms
+2026-05-05 20:10:50 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 10 ms
+2026-05-05 20:10:50 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 41 ms
+2026-05-05 20:11:13 [qtp1780694323-68] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 47 ms
+2026-05-05 20:11:30 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /complaints/search took 2 ms
+2026-05-05 20:11:35 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency/search took 4 ms
+2026-05-05 20:11:55 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 29 ms
+2026-05-05 20:12:06 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 2 ms
+2026-05-05 20:12:06 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 17 ms
+2026-05-05 20:12:30 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 8 ms
+2026-05-05 20:12:47 [qtp1780694323-65] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 42 ms
+2026-05-05 20:13:01 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /whistleblower took 523 ms
+2026-05-05 20:13:01 [qtp1780694323-62] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /whistleblower took 523 ms
+2026-05-05 20:13:20 [qtp1780694323-65] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 41 ms
+2026-05-05 20:13:39 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints/search took 4 ms
+2026-05-05 20:13:59 [qtp1780694323-65] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints/manage took 4 ms
+2026-05-05 20:15:52 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 18 ms
+2026-05-05 20:16:05 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:16:05 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 95 ms
+2026-05-05 20:16:12 [qtp1780694323-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 43 ms
+2026-05-05 20:17:07 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 20 ms
+2026-05-05 20:17:07 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:17:24 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 25 ms
+2026-05-05 20:17:48 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 18 ms
+2026-05-05 20:17:48 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 48 ms
+2026-05-05 20:17:56 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 20 ms
+2026-05-05 20:18:23 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 14 ms
+2026-05-05 20:18:23 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 23 ms
+2026-05-05 20:18:41 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 15 ms
+2026-05-05 20:18:41 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 42 ms
+2026-05-05 20:18:50 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 32 ms
+2026-05-05 20:19:07 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 4 ms
+2026-05-05 20:19:46 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 15 ms
+2026-05-05 20:19:47 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 43 ms
+2026-05-05 20:20:01 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:20:01 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:20:22 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 8 ms
+2026-05-05 20:20:39 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /health took 11 ms
+2026-05-05 20:20:52 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints/manage took 5 ms
+2026-05-05 20:21:06 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 3 ms
+2026-05-05 20:21:07 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:21:21 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 9 ms
+2026-05-05 20:21:21 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 45 ms
+2026-05-05 20:21:41 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 37 ms
+2026-05-05 20:22:09 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 40 ms
+2026-05-05 20:22:17 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:22:17 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:22:29 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 14 ms
+2026-05-05 20:22:35 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 29 ms
+2026-05-05 20:22:44 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 46 ms
+2026-05-05 20:22:52 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 2 ms
+2026-05-05 20:22:52 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 25 ms
+2026-05-05 20:23:07 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:23:07 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 39 ms
+2026-05-05 20:23:14 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 37 ms
+2026-05-05 20:23:30 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 493 ms
+2026-05-05 20:23:41 [qtp1780694323-71] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 35 ms
+2026-05-05 20:25:03 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:25:04 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:25:19 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 10 ms
+2026-05-05 20:25:26 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 36 ms
+2026-05-05 20:25:44 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 71 ms
+2026-05-05 20:25:52 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/search took 4 ms
+2026-05-05 20:26:01 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/complaints took 4 ms
+2026-05-05 20:26:08 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 3 ms
+2026-05-05 20:26:08 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:26:28 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 8 ms
+2026-05-05 20:26:28 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 39 ms
+2026-05-05 20:26:47 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 31 ms
+2026-05-05 20:27:02 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 3 ms
+2026-05-05 20:27:36 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 65 ms
+2026-05-05 20:27:37 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 197 ms
+2026-05-05 20:27:47 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:27:47 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 30 ms
+2026-05-05 20:28:08 [qtp1780694323-69] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 8 ms
+2026-05-05 20:28:17 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 34 ms
+2026-05-05 20:28:26 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /health took 4 ms
+2026-05-05 20:28:42 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 25 ms
+2026-05-05 20:28:50 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:28:50 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 24 ms
+2026-05-05 20:29:03 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 12 ms
+2026-05-05 20:29:03 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 34 ms
+2026-05-05 20:29:14 [qtp1780694323-75] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/dashboard took 77 ms
+2026-05-05 20:29:23 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:29:23 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:29:45 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 8 ms
+2026-05-05 20:29:45 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 49 ms
+2026-05-05 20:29:54 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:29:54 [qtp1780694323-42] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:30:13 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:30:22 [qtp1780694323-67] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 103 ms
+2026-05-05 20:30:38 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 20:30:39 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 20:31:01 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:31:01 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 57 ms
+2026-05-05 20:31:10 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /whistleblower took 34 ms
+2026-05-05 20:31:20 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 5 ms
+2026-05-05 20:31:20 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 24 ms
+2026-05-05 20:31:27 [qtp1780694323-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 19 ms
+2026-05-05 20:32:01 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 17 ms
+2026-05-05 20:32:01 [qtp1780694323-43] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 26 ms
+2026-05-05 20:32:17 [qtp1780694323-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 9 ms
+2026-05-05 20:51:36 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-05 20:51:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-05 20:51:38 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-05 20:51:38 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-05-05 20:51:40 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-05 20:51:40 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 4070 ms
+2026-05-05 20:51:40 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+2026-05-05 20:51:40 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-05-05 20:51:42 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1421 ms
+2026-05-05 20:56:41 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 1619 ms
+2026-05-05 20:56:41 [qtp659906939-52] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /login took 1619 ms
+2026-05-05 20:56:54 [qtp659906939-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 787 ms
+2026-05-05 20:56:54 [qtp659906939-44] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /register took 787 ms
+2026-05-05 20:57:51 [qtp659906939-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 126 ms
+2026-05-05 20:57:51 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 33 ms
+2026-05-05 20:58:00 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 63 ms
+2026-05-05 20:58:01 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 1025 ms
+2026-05-05 20:58:01 [qtp659906939-54] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /official/dashboard took 1025 ms
+2026-05-05 20:58:22 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 8 ms
+2026-05-05 20:58:22 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 20:58:30 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 30 ms
+2026-05-05 20:58:42 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 24 ms
+2026-05-05 20:58:42 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 38 ms
+2026-05-05 20:58:51 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 20:58:52 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 870 ms
+2026-05-05 20:58:52 [qtp659906939-52] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /citizen/dashboard took 870 ms
+2026-05-05 20:59:00 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 784 ms
+2026-05-05 20:59:00 [qtp659906939-54] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /citizen/complaint/new took 784 ms
+2026-05-05 20:59:18 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 326 ms
+2026-05-05 20:59:43 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 138 ms
+2026-05-05 20:59:44 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 106 ms
+2026-05-05 20:59:58 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 3 ms
+2026-05-05 20:59:58 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 32 ms
+2026-05-05 21:00:06 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 13 ms
+2026-05-05 21:00:06 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 94 ms
+2026-05-05 21:00:13 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 21:00:13 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 31 ms
+2026-05-05 21:00:20 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 30 ms
+2026-05-05 21:00:34 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 17 ms
+2026-05-05 21:00:34 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 30 ms
+2026-05-05 21:00:42 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 11 ms
+2026-05-05 21:00:42 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 75 ms
+2026-05-05 21:00:57 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /official/complaint/1/assign took 89 ms
+2026-05-05 21:00:57 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 84 ms
+2026-05-05 21:03:24 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 251 ms
+2026-05-05 21:03:29 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 233 ms
+2026-05-05 21:03:36 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 231 ms
+2026-05-05 21:03:38 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 26 ms
+2026-05-05 21:03:39 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 23 ms
+2026-05-05 21:03:42 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 533 ms
+2026-05-05 21:03:42 [qtp659906939-54] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /leaderboard took 533 ms
+2026-05-05 21:03:45 [qtp659906939-60] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 192 ms
+2026-05-05 21:04:50 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 10 ms
+2026-05-05 21:05:01 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 24 ms
+2026-05-05 21:05:29 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 17 ms
+2026-05-05 21:05:29 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 29 ms
+2026-05-05 21:05:44 [qtp659906939-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 26 ms
+2026-05-05 21:06:17 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 26 ms
+2026-05-05 21:06:17 [qtp659906939-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 43 ms
+2026-05-05 21:06:54 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 28 ms
+2026-05-05 21:07:31 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 23 ms
+2026-05-05 21:07:31 [qtp659906939-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 43 ms
+2026-05-05 21:07:55 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 23 ms
+2026-05-05 21:07:55 [qtp659906939-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 241 ms
+2026-05-05 21:08:04 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 94 ms
+2026-05-05 21:08:16 [qtp659906939-44] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/api/classify took 5 ms
+2026-05-05 21:09:06 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 22 ms
+2026-05-05 21:09:06 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 39 ms
+2026-05-05 21:09:12 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 1 ms
+2026-05-05 21:09:12 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 22 ms
+2026-05-05 21:09:29 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 12 ms
+2026-05-05 21:09:29 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 74 ms
+2026-05-05 21:09:50 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /official/complaint/2/assign took 20 ms
+2026-05-05 21:09:50 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 59 ms
+2026-05-05 21:09:57 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 21:09:57 [qtp659906939-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 27 ms
+2026-05-05 21:10:13 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 15 ms
+2026-05-05 21:10:14 [qtp659906939-64] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 690 ms
+2026-05-05 21:10:14 [qtp659906939-64] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [GET] /worker/schedule took 690 ms
+2026-05-05 21:14:51 [qtp659906939-65] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 40 ms
+2026-05-05 21:14:59 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 21:14:59 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 23 ms
+2026-05-05 21:15:19 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 10 ms
+2026-05-05 21:15:19 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 32 ms
+2026-05-05 21:15:37 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 54 ms
+2026-05-05 21:15:44 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /logout took 2 ms
+2026-05-05 21:15:44 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 35 ms
+2026-05-05 21:15:57 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 14 ms
+2026-05-05 21:15:57 [qtp659906939-66] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 84 ms
+2026-05-05 21:16:06 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 52 ms

@@ -29,7 +29,7 @@ public class ComplaintClassifierService {
         if (lowerDesc.matches(".*\\b(accident|fatal|emergency|huge|deep|critical|blocked|danger|immediate|injury)\\b.*")) {
             severity = Complaint.Severity.CRITICAL;
             estimatedFixTime = 24; 
-        } else if (lowerDesc.matches(".*\\b(big|dangerous|multiple|overflowing|spreading|severe|broken)\\b.*")) {
+        } else if (lowerDesc.matches(".*\\b(big|massive|dangerous|multiple|overflowing|spreading|severe|broken)\\b.*")) {
             severity = Complaint.Severity.HIGH;
             estimatedFixTime = 48;
         } else if (lowerDesc.matches(".*\\b(small|minor|slight|tiny|faint|beginning)\\b.*")) {

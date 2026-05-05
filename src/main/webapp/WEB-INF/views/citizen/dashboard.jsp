@@ -61,6 +61,7 @@
                 <th>Description</th>
                 <th>Current Status</th>
                 <th>Timeline</th>
+                <th>Evidence</th>
                 <th style="text-align: right;">Actions</th>
             </tr>
         </thead>
@@ -96,6 +97,18 @@
                     <td style="color: var(--text-muted); font-size: 0.875rem;">
                         <i class="fa-regular fa-clock"></i> ${comp.reportedAt}
                     </td>
+                    <td>
+                        <c:if test="${not empty comp.evidenceFilePath}">
+                            <a href="<c:url value='/files/evidence/${fn:substringAfter(comp.evidenceFilePath, \"/uploads/\")}'/>" target="_blank" title="View Evidence" style="color: var(--primary);">
+                                <i class="fa-solid fa-file-image"></i>
+                            </a>
+                        </c:if>
+                        <c:if test="${not empty comp.resolutionPhotoUrl}">
+                            <a href="<c:url value='/files/evidence/${fn:substringAfter(comp.resolutionPhotoUrl, \"/uploads/\")}'/>" target="_blank" title="View Resolution Proof" style="color: #16a34a; margin-left: 0.5rem;">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </a>
+                        </c:if>
+                    </td>
                     <td style="text-align: right;">
                         <c:if test="${comp.status == 'RESOLVED'}">
                             <a href="<c:url value='/citizen/complaint/${comp.id}/verify'/>" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">
@@ -112,7 +125,7 @@
             </c:forEach>
             <c:if test="${empty complaints}">
                 <tr>
-                    <td colspan="6" style="padding: 6rem; text-align: center; color: var(--text-muted);">
+                    <td colspan="7" style="padding: 6rem; text-align: center; color: var(--text-muted);">
                         <i class="fa-regular fa-folder-open" style="font-size: 3.5rem; display: block; margin-bottom: 1.5rem; opacity: 0.3;"></i>
                         <div style="font-weight: 600; font-size: 1.125rem;">No reports found</div>
                         <p style="margin-top: 0.5rem;">Issues you report will appear here.</p>

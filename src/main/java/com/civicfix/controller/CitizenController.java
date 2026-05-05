@@ -14,6 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -80,10 +87,32 @@ public class CitizenController {
     }
 
     @PostMapping("/complaint/submit")
-    public String submitComplaint(@ModelAttribute Complaint complaint, HttpSession session) {
+    public String submitComplaint(@ModelAttribute Complaint complaint, 
+                                  @RequestParam(value = "evidenceFile", required = false) MultipartFile file,
+                                  HttpSession session) {
         User user = (User) session.getAttribute("user");
         if (user == null) return "redirect:/login";
         
+        // Handle File Upload (Cloud Storage Simulation)
+        if (file != null && !file.isEmpty()) {
+            try {
+                String uploadDir = session.getServletContext().getRealPath("/uploads/");
+                Path uploadPath = Paths.get(uploadDir);
+                if (!Files.exists(uploadPath)) {
+                    Files.createDirectories(uploadPath);
+                }
+                
+                String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
+                Path filePath = uploadPath.resolve(filename);
+                Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+                
+                complaint.setEvidenceFilePath("/uploads/" + filename);
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "redirect:/citizen/complaint/new?error=File upload failed";
+            }
+        }
+
         complaint.setCitizen(user);
         complaint.setStatus(Complaint.Status.OPEN);
         complaintDao.save(complaint);

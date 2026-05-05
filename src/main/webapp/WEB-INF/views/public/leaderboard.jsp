@@ -21,13 +21,13 @@
                         <a href="<c:url value='/ward/${ward.id}'/>" style="font-weight: 700; font-size: 1.125rem; color: inherit; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--secondary)'" onmouseout="this.style.borderColor='transparent'">
                             ${ward.name}
                         </a>
-                        <span style="font-weight: 800; color: ${ward.healthScore >= 80 ? 'var(--secondary)' : (ward.healthScore >= 50 ? 'var(--accent)' : 'var(--error)')};">
+                        <span class="text-800 ${ward.healthScore >= 80 ? 'text-secondary' : (ward.healthScore >= 50 ? 'text-accent' : 'text-error')}">
                             ${ward.healthScore}%
                         </span>
                     </div>
                     <div class="progress-container" style="height: 0.75rem;">
-                        <div class="progress-bar" style="width: ${ward.healthScore}%; 
-                            background: ${ward.healthScore >= 80 ? 'var(--secondary)' : (ward.healthScore >= 50 ? 'var(--accent)' : 'var(--error)')};">
+                        <div class="progress-bar ${ward.healthScore >= 80 ? 'bg-secondary' : (ward.healthScore >= 50 ? 'bg-accent' : 'bg-error')}" 
+                             data-width="${ward.healthScore}">
                         </div>
                     </div>
                 </div>
@@ -81,3 +81,11 @@
 </div>
 
 <%@ include file="../common/footer.jsp" %>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('[data-width]').forEach(function(el) {
+            el.style.width = el.getAttribute('data-width') + '%';
+        });
+    });
+</script>

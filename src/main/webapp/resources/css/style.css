@@ -14,7 +14,9 @@
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    --glass: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -207,7 +209,26 @@ nav {
 .badge-critical { background: #fee2e2; color: #ef4444; }
 .badge-high { background: #ffedd5; color: #f59e0b; }
 .badge-medium { background: #e0f2fe; color: #0ea5e9; }
-.badge-low { background: #f0fdf4; color: #10b981; }
+.badge-low { background: #f1f5f9; color: var(--text-muted); }
+
+/* Color Utilities */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-error { color: var(--error) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+.bg-primary { background: var(--primary) !important; }
+.bg-secondary { background: var(--secondary) !important; }
+.bg-accent { background: var(--accent) !important; }
+.bg-error { background: var(--error) !important; }
+.bg-surface { background: var(--surface) !important; }
+.bg-muted { background: #f1f5f9 !important; }
+
+/* Typography Utilities */
+.text-600 { font-weight: 600 !important; }
+.text-700 { font-weight: 700 !important; }
+.text-800 { font-weight: 800 !important; }
 
 /* Dashboard Grid */
 .dashboard-grid {
@@ -221,7 +242,16 @@ nav {
     padding: 1.5rem;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 .stat-card:hover {
@@ -328,3 +358,7 @@ tr:last-child td {
     transform: scale(1.05);
     z-index: 10;
 }
+
+.heatmap-healthy { background: #f0fdf4 !important; border: 2px solid rgba(16, 185, 129, 0.27) !important; color: #10b981 !important; }
+.heatmap-caution { background: #fffbeb !important; border: 2px solid rgba(245, 158, 11, 0.27) !important; color: #f59e0b !important; }
+.heatmap-risk { background: #fef2f2 !important; border: 2px solid rgba(239, 68, 68, 0.27) !important; color: #ef4444 !important; }

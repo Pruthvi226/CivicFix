@@ -1,3 +1,4 @@
+<%@ include file="taglibs.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,17 +34,23 @@
                 <a href="<c:url value='/transparency'/>">Transparency</a>
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
-                        <c:if test="${sessionScope.user.role == 'CITIZEN'}">
-                            <a href="<c:url value='/citizen/dashboard'/>">Dashboard</a>
-                            <a href="<c:url value='/citizen/complaint/new'/>" class="btn btn-primary">Report Issue</a>
-                        </c:if>
-                        <c:if test="${sessionScope.user.role == 'WORKER'}">
-                            <a href="<c:url value='/worker/schedule'/>">My Tasks</a>
-                        </c:if>
-                        <c:if test="${sessionScope.user.role == 'OFFICIAL'}">
-                            <a href="<c:url value='/official/dashboard'/>">Command Center</a>
-                        </c:if>
-                        <a href="<c:url value='/logout'/>" style="color: var(--error);"><i class="fa-solid fa-power-off"></i></a>
+                        <c:choose>
+                            <c:when test="${sessionScope.user.role == 'CITIZEN'}">
+                                <a href="<c:url value='/citizen/dashboard'/>">Dashboard</a>
+                                <a href="<c:url value='/citizen/complaint/new'/>" class="btn btn-primary">Report Issue</a>
+                            </c:when>
+                            <c:when test="${sessionScope.user.role == 'WORKER'}">
+                                <a href="<c:url value='/worker/dashboard'/>">Dashboard</a>
+                                <a href="<c:url value='/worker/schedule'/>">My Tasks</a>
+                                <a href="<c:url value='/worker/history'/>">History</a>
+                            </c:when>
+                            <c:when test="${sessionScope.user.role == 'OFFICIAL'}">
+                                <a href="<c:url value='/official/dashboard'/>">Dashboard</a>
+                                <a href="<c:url value='/official/audit'/>">Audit</a>
+                                <a href="<c:url value='/official/heatmap'/>">Heatmap</a>
+                            </c:when>
+                        </c:choose>
+                        <a href="<c:url value='/logout'/>" style="color: var(--error); margin-left: 1rem;"><i class="fa-solid fa-power-off"></i></a>
                     </c:when>
                     <c:otherwise>
                         <a href="<c:url value='/login'/>">Sign In</a>

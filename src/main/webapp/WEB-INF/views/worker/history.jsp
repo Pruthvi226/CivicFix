@@ -23,11 +23,11 @@
                     <c:forEach var="job" items="${history}">
                         <tr>
                             <td style="font-family: monospace; font-weight: 700;">#CF-${job.id}</td>
-                            <td><span class="badge badge-${job.category.toString().toLowerCase()}">${job.category}</span></td>
+                            <td><span class="badge badge-${fn:toLowerCase(job.category)}">${job.category}</span></td>
                             <td>${job.description}</td>
                             <td><fmt:formatDate value="${job.resolvedAt}" pattern="dd MMM, yyyy HH:mm"/></td>
                             <td>
-                                <span class="status-pill status-${job.status.toString().toLowerCase()}">
+                                <span class="status-pill status-${fn:toLowerCase(job.status)}">
                                     <i class="fas fa-check-circle"></i> ${job.status}
                                 </span>
                             </td>

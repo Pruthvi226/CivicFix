@@ -75,9 +75,9 @@
                 </span>
                 <span class="stat-label">Issues Resolved</span>
             </div>
-            <div class="stat-card">
-                <span class="stat-value">${ward.population}</span>
-                <span class="stat-label">Population</span>
+            <div class="stat-card" style="text-align: center;">
+                <span class="stat-value">${ward.cityZone}</span>
+                <span class="stat-label">Zone</span>
             </div>
         </div>
 
@@ -96,9 +96,9 @@
                     <tbody>
                         <c:forEach var="c" items="${complaints}">
                             <tr>
-                                <td><span class="badge badge-${c.category.toString().toLowerCase()}">${c.category}</span></td>
+                                <td><span class="badge badge-${fn:toLowerCase(c.category)}">${c.category}</span></td>
                                 <td>${c.description}</td>
-                                <td><span class="status-pill status-${c.status.toString().toLowerCase()}">${c.status}</span></td>
+                                <td><span class="status-pill status-${fn:toLowerCase(c.status)}">${c.status}</span></td>
                                 <td>${c.reportedAt}</td>
                             </tr>
                         </c:forEach>

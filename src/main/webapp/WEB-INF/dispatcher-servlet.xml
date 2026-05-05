@@ -11,8 +11,8 @@
            http://www.springframework.org/schema/mvc 
            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- 1. Component scan covers ALL controller packages -->
-    <context:component-scan base-package="com.civicfix.controller, com.civicfix.config" />
+    <!-- 1. Component scan covers ALL controller packages and exceptions -->
+    <context:component-scan base-package="com.civicfix.controller, com.civicfix.config, com.civicfix.exception" />
 
     <!-- 5. Enable Spring MVC Annotations -->
     <mvc:annotation-driven />

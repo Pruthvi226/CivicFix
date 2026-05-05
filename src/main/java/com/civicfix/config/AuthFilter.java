@@ -32,6 +32,7 @@ public class AuthFilter implements Filter {
             path.equals("/leaderboard") ||
             path.equals("/transparency") ||
             path.equals("/index.jsp") ||
+            path.startsWith("/whistleblower") ||
             path.startsWith("/login") ||
             path.startsWith("/register") ||
             path.startsWith("/resources/")) {

@@ -62,6 +62,9 @@ public class Complaint {
     @Column(name = "rejection_reason", columnDefinition = "TEXT")
     private String rejectionReason;
 
+    @Column(name = "evidence_file_path")
+    private String evidenceFilePath;
+
     @Column(name = "reported_at", updatable = false)
     private LocalDateTime reportedAt;
 
@@ -133,9 +136,36 @@ public class Complaint {
     public String getRejectionReason() { return rejectionReason; }
     public void setRejectionReason(String rejectionReason) { this.rejectionReason = rejectionReason; }
 
+    public String getEvidenceFilePath() { return evidenceFilePath; }
+    public void setEvidenceFilePath(String evidenceFilePath) { this.evidenceFilePath = evidenceFilePath; }
+
     public LocalDateTime getReportedAt() { return reportedAt; }
     public void setReportedAt(LocalDateTime reportedAt) { this.reportedAt = reportedAt; }
 
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+
+    @Transient
+    public int getPriorityScore() {
+        int score = 0;
+        
+        // 1. Severity points
+        if (severity != null) {
+            if (severity == Severity.CRITICAL) score += 50;
+            else if (severity == Severity.HIGH) score += 30;
+            else if (severity == Severity.MEDIUM) score += 15;
+        }
+        
+        // 2. Category points (Infrastructure & Utilities are higher)
+        if (category == Category.DRAIN || category == Category.POTHOLE) score += 20;
+        else if (category == Category.STREETLIGHT) score += 10;
+        
+        // 3. Age points (Older issues get higher priority)
+        if (reportedAt != null) {
+            long daysOld = java.time.Duration.between(reportedAt, LocalDateTime.now()).toDays();
+            score += (int) (daysOld * 2); // 2 points per day
+        }
+        
+        return Math.min(score, 100); // Max 100
+    }
 }
