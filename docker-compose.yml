@@ -26,6 +26,8 @@ services:
       - DB_URL=jdbc:mysql://db:3306/civicfix_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       - DB_USER=root
       - DB_PASSWORD=password
+      - DB_DRIVER=com.mysql.cj.jdbc.Driver
+      - DB_DIALECT=org.hibernate.dialect.MySQL8Dialect
     volumes:
       - ./uploads:/usr/local/tomcat/webapps/uploads/complaints
     depends_on:
