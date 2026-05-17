@@ -14,6 +14,19 @@
 </c:if>
 
 <!-- Map Section -->
+<style>
+    #taskMap,
+    #taskMap.leaflet-container {
+        background-color: #e8f4ef !important;
+        background-image:
+            linear-gradient(28deg, transparent 47%, rgba(245, 158, 11, 0.38) 48%, rgba(245, 158, 11, 0.38) 52%, transparent 53%),
+            linear-gradient(118deg, transparent 46%, rgba(16, 185, 129, 0.25) 47%, rgba(16, 185, 129, 0.25) 52%, transparent 53%),
+            linear-gradient(0deg, rgba(255,255,255,0.55) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px);
+        background-size: 360px 260px, 420px 300px, 48px 48px, 48px 48px;
+        background-position: 0 0, 60px 20px, 0 0, 0 0;
+    }
+</style>
 <div style="margin-bottom: 2rem; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
     <div id="taskMap" style="width: 100%; height: 400px;"></div>
 </div>

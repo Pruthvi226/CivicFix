@@ -1,0 +1,385 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.civicfix:CivicFix >------------------------
+[INFO] Building CivicFix 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[WARNING] Parameter 'scanIntervalSeconds' is unknown for plugin 'jetty-maven-plugin:10.0.15:run (default-cli)'
+[INFO] 
+[INFO] >>> jetty:10.0.15:run (default-cli) > test-compile @ CivicFix >>>
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ CivicFix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ CivicFix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ CivicFix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ CivicFix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< jetty:10.0.15:run (default-cli) < test-compile @ CivicFix <<<
+[INFO] 
+[INFO] 
+[INFO] --- jetty:10.0.15:run (default-cli) @ CivicFix ---
+[INFO] Configuring Jetty for project: CivicFix
+[INFO] Classes = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\target\classes
+[INFO] Context path = /
+[INFO] Tmp directory = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\target\tmp
+[INFO] web.xml file = file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\webapp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] jetty-10.0.15; built: 2023-04-11T17:25:14.480Z; git: 68017dbd00236bb7e187330d7585a059610f661d; jvm 25.0.1+8-LTS-27
+[WARNING] org.apache.taglibs.standard.Version scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/Version.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/Version.class
+[WARNING] org.apache.taglibs.standard.functions.Functions scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/functions/Functions.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/functions/Functions.class
+[WARNING] org.apache.taglibs.standard.resources.Resources scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/resources/Resources.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/resources/Resources.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.CatchTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/CatchTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/CatchTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ChooseTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ChooseTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ChooseTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.DeclareTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/DeclareTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/DeclareTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ForEachSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ForEachSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ForEachSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ForTokensSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ForTokensSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ForTokensSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ImportSupport$ImportResponseWrapper$1 scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport$ImportResponseWrapper$1.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport$ImportResponseWrapper$1.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ImportSupport$ImportResponseWrapper scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport$ImportResponseWrapper.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport$ImportResponseWrapper.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ImportSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ImportSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.NullAttributeException scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/NullAttributeException.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/NullAttributeException.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.OtherwiseTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/OtherwiseTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/OtherwiseTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.OutSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/OutSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/OutSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ParamParent scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ParamParent.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ParamParent.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ParamSupport$ParamManager scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ParamSupport$ParamManager.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ParamSupport$ParamManager.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.ParamSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/ParamSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/ParamSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.RedirectSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/RedirectSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/RedirectSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.RemoveTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/RemoveTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/RemoveTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.SetSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/SetSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/SetSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.UrlSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/UrlSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/UrlSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.Util scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/Util.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/Util.class
+[WARNING] org.apache.taglibs.standard.tag.common.core.WhenTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/core/WhenTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/core/WhenTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.BundleSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/BundleSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/BundleSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.FormatDateSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/FormatDateSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/FormatDateSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.FormatNumberSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/FormatNumberSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/FormatNumberSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.MessageSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/MessageSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/MessageSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.ParamSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/ParamSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/ParamSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.ParseDateSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/ParseDateSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/ParseDateSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.ParseNumberSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/ParseNumberSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/ParseNumberSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.RequestEncodingSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/RequestEncodingSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/RequestEncodingSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.SetBundleSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/SetBundleSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/SetBundleSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.SetLocaleSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/SetLocaleSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/SetLocaleSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.SetTimeZoneSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/SetTimeZoneSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/SetTimeZoneSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.fmt.TimeZoneSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/fmt/TimeZoneSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/fmt/TimeZoneSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.DataSourceUtil scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/DataSourceUtil.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/DataSourceUtil.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.DataSourceWrapper scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/DataSourceWrapper.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/DataSourceWrapper.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.DateParamTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/DateParamTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/DateParamTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.ParamTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/ParamTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/ParamTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.QueryTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/QueryTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/QueryTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.ResultImpl scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/ResultImpl.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/ResultImpl.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.SetDataSourceTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/SetDataSourceTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/SetDataSourceTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.TransactionTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/TransactionTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/TransactionTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.sql.UpdateTagSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/sql/UpdateTagSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/sql/UpdateTagSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.ExprSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/ExprSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/ExprSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.ForEachTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/ForEachTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/ForEachTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.IfTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/IfTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/IfTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.ParamSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/ParamSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/ParamSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.ParseSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/ParseSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/ParseSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.SetTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/SetTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/SetTag.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.TransformSupport scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/TransformSupport.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/TransformSupport.class
+[WARNING] org.apache.taglibs.standard.tag.common.xml.WhenTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/common/xml/WhenTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/common/xml/WhenTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.ForEachTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/ForEachTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/ForEachTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.ForTokensTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/ForTokensTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/ForTokensTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.IfTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/IfTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/IfTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.ImportTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/ImportTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/ImportTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.OutTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/OutTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/OutTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.ParamTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/ParamTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/ParamTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.RedirectTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/RedirectTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/RedirectTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.SetTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/SetTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/SetTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.UrlTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/UrlTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/UrlTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.core.WhenTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/core/WhenTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/core/WhenTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.BundleTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/BundleTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/BundleTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.FormatDateTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/FormatDateTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/FormatDateTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.FormatNumberTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/FormatNumberTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/FormatNumberTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.MessageTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/MessageTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/MessageTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.ParamTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParamTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParamTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.ParseDateTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParseDateTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParseDateTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.ParseNumberTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParseNumberTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/ParseNumberTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.RequestEncodingTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/RequestEncodingTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/RequestEncodingTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.SetBundleTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetBundleTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetBundleTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.SetLocaleTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetLocaleTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetLocaleTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.SetTimeZoneTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetTimeZoneTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/SetTimeZoneTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.fmt.TimeZoneTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/fmt/TimeZoneTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/fmt/TimeZoneTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.DateParamTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/DateParamTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/DateParamTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.ParamTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/ParamTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/ParamTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.QueryTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/QueryTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/QueryTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.SetDataSourceTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/SetDataSourceTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/SetDataSourceTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.TransactionTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/TransactionTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/TransactionTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.sql.UpdateTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/sql/UpdateTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/sql/UpdateTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.xml.ExprTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/xml/ExprTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/xml/ExprTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.xml.ParamTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/xml/ParamTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/xml/ParamTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.xml.ParseTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/xml/ParseTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/xml/ParseTag.class
+[WARNING] org.apache.taglibs.standard.tag.rt.xml.TransformTag scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tag/rt/xml/TransformTag.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tag/rt/xml/TransformTag.class
+[WARNING] org.apache.taglibs.standard.tei.DeclareTEI scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/DeclareTEI.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/DeclareTEI.class
+[WARNING] org.apache.taglibs.standard.tei.ForEachTEI scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/ForEachTEI.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/ForEachTEI.class
+[WARNING] org.apache.taglibs.standard.tei.ImportTEI scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/ImportTEI.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/ImportTEI.class
+[WARNING] org.apache.taglibs.standard.tei.Util scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/Util.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/Util.class
+[WARNING] org.apache.taglibs.standard.tei.XmlParseTEI scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/XmlParseTEI.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/XmlParseTEI.class
+[WARNING] org.apache.taglibs.standard.tei.XmlTransformTEI scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tei/XmlTransformTEI.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tei/XmlTransformTEI.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlBaseTLV scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlBaseTLV.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlBaseTLV.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlCoreTLV$1 scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV$1.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV$1.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlCoreTLV$Handler scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV$Handler.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV$Handler.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlCoreTLV scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlCoreTLV.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlFmtTLV$1 scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV$1.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV$1.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlFmtTLV$Handler scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV$Handler.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV$Handler.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlFmtTLV scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlFmtTLV.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlSqlTLV$1 scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV$1.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV$1.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlSqlTLV$Handler scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV$Handler.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV$Handler.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlSqlTLV scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlSqlTLV.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlXmlTLV$1 scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$1.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$1.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlXmlTLV$Handler scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$Handler.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$Handler.class
+[WARNING] org.apache.taglibs.standard.tlv.JstlXmlTLV scanned from multiple locations: jar:file:///C:/Users/pruthviraj/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV.class, jar:file:///C:/Users/pruthviraj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV.class
+[INFO] No Spring WebApplicationInitializer types detected on classpath
+[INFO] Session workerName=node0
+[INFO] Initializing Spring root WebApplicationContext
+2026-05-17 12:52:06 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-17 12:52:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-17 12:52:07 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-17 12:52:07 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    create table complaints (
+       id bigint generated by default as identity,
+        address varchar(255),
+        category varchar(255) not null,
+        description TEXT not null,
+        estimated_fix_time integer,
+        evidence_file_path varchar(255),
+        latitude numeric(10,8) not null,
+        longitude numeric(11,8) not null,
+        rejection_reason TEXT,
+        reported_at timestamp,
+        resolution_photo_url varchar(255),
+        resolved_at timestamp,
+        severity varchar(255) not null,
+        status varchar(255),
+        updated_at timestamp,
+        verification_status varchar(255),
+        assigned_worker_id bigint,
+        citizen_id bigint,
+        ward_id bigint,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table karma_transactions (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        points integer not null,
+        reason varchar(255) not null,
+        citizen_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table notifications (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        is_read boolean,
+        message varchar(255) not null,
+        user_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table perks (
+       id bigint generated by default as identity,
+        cost_karma integer not null,
+        description TEXT,
+        icon_class varchar(255),
+        is_active boolean,
+        name varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table predictive_flags (
+       id bigint generated by default as identity,
+        advisory_message TEXT not null,
+        category varchar(255) not null,
+        created_at timestamp,
+        is_active boolean,
+        latitude numeric(10,8) not null,
+        longitude numeric(11,8) not null,
+        risk_level varchar(255) not null,
+        ward_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table users (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        email varchar(100) not null,
+        karma_points integer,
+        password varchar(255) not null,
+        phone varchar(20),
+        role varchar(255) not null,
+        updated_at timestamp,
+        username varchar(50) not null,
+        ward_id bigint,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table wards (
+       id bigint generated by default as identity,
+        city_zone varchar(50),
+        created_at timestamp,
+        health_score numeric(5,2),
+        name varchar(100) not null,
+        updated_at timestamp,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table whistleblower_reports (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        encrypted_details TEXT not null,
+        status varchar(255),
+        tracking_token varchar(64) not null,
+        updated_at timestamp,
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table users 
+       drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+Hibernate: 
+    
+    alter table users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: 
+    
+    alter table users 
+       drop constraint if exists UK_r43af9ap4edm43mmtq01oddj6
+Hibernate: 
+    
+    alter table users 
+       add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
+Hibernate: 
+    
+    alter table whistleblower_reports 
+       drop constraint if exists UK_ogv2g3jariv26121hlsa8yxkx
+Hibernate: 
+    
+    alter table whistleblower_reports 
+       add constraint UK_ogv2g3jariv26121hlsa8yxkx unique (tracking_token)
+Hibernate: 
+    
+    alter table complaints 
+       add constraint FK75rkiik9fp4w8ece9ergfrsgy 
+       foreign key (assigned_worker_id) 
+       references users
+Hibernate: 
+    
+    alter table complaints 
+       add constraint FKes1g07iyxfav5p0a91a5jyeu2 
+       foreign key (citizen_id) 
+       references users
+Hibernate: 
+    
+    alter table complaints 
+       add constraint FK7egci4r8i781vt9k12kt9o876 
+       foreign key (ward_id) 
+       references wards
+Hibernate: 
+    
+    alter table karma_transactions 
+       add constraint FK20q1d6q1yks7pahlvyga39mm5 
+       foreign key (citizen_id) 
+       references users
+Hibernate: 
+    
+    alter table notifications 
+       add constraint FK9y21adhxn0ayjhfocscqox7bh 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    
+    alter table predictive_flags 
+       add constraint FKn16ndtxar5j50f85rv8vpypl5 
+       foreign key (ward_id) 
+       references wards
+Hibernate: 
+    
+    alter table users 
+       add constraint FKnsvs322tc83u22087mkg0t74e 
+       foreign key (ward_id) 
+       references wards
+2026-05-17 12:52:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-17 12:52:08 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 2287 ms
+2026-05-17 12:52:08 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+[INFO] Initializing Spring DispatcherServlet 'dispatcher'
+2026-05-17 12:52:08 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+Hibernate: 
+    select
+        ward0_.id as id1_6_,
+        ward0_.city_zone as city_zon2_6_,
+        ward0_.created_at as created_3_6_,
+        ward0_.health_score as health_s4_6_,
+        ward0_.name as name5_6_,
+        ward0_.updated_at as updated_6_6_ 
+    from
+        wards ward0_
+Hibernate: 
+    insert 
+    into
+        wards
+        (id, city_zone, created_at, health_score, name, updated_at) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        wards
+        (id, city_zone, created_at, health_score, name, updated_at) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        wards
+        (id, city_zone, created_at, health_score, name, updated_at) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        wards
+        (id, city_zone, created_at, health_score, name, updated_at) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        wards
+        (id, city_zone, created_at, health_score, name, updated_at) 
+    values
+        (default, ?, ?, ?, ?, ?)
+2026-05-17 12:52:09 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 756 ms
+[INFO] Started o.e.j.m.p.MavenWebAppContext@37a0ec3c{CivicFix Application,/,[file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/],AVAILABLE}{file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/}
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.893 s
+[INFO] Finished at: 2026-05-17T12:52:09+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.eclipse.jetty:jetty-maven-plugin:10.0.15:run (default-cli) on project CivicFix: Error starting jetty: Failed to bind to 0.0.0.0/0.0.0.0:8888: Address already in use: bind -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
