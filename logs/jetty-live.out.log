@@ -1,0 +1,95 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.civicfix:CivicFix >------------------------
+[INFO] Building CivicFix 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] >>> jetty:9.4.51.v20230217:run (default-cli) > test-compile @ CivicFix >>>
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ CivicFix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ CivicFix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ CivicFix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ CivicFix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< jetty:9.4.51.v20230217:run (default-cli) < test-compile @ CivicFix <<<
+[INFO] 
+[INFO] 
+[INFO] --- jetty:9.4.51.v20230217:run (default-cli) @ CivicFix ---
+[INFO] Logging initialized @2622ms to org.eclipse.jetty.util.log.Slf4jLog
+[INFO] webAppSourceDirectory not set. Trying src\main\webapp
+[INFO] Reload Mechanic: automatic
+[INFO] nonBlocking:false
+[INFO] Classes = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\target\classes
+[INFO] Configuring Jetty for project: CivicFix
+[INFO] Context path = /
+[INFO] Tmp directory = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\target\tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\src\main\webapp
+[INFO] jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 25.0.1+8-LTS-27
+[WARNING] Failed startup of context o.e.j.m.p.JettyWebAppContext@1de4bee0{/,file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/,STOPPED}{file:///C:/Users/pruthviraj/OneDrive/Desktop/jdk/CivicFix/src/main/webapp/}
+java.lang.IllegalStateException: Failed to delete temp dir C:\Users\pruthviraj\OneDrive\Desktop\jdk\CivicFix\target\tmp
+    at org.eclipse.jetty.webapp.WebInfConfiguration.configureTempDirectory (WebInfConfiguration.java:532)
+    at org.eclipse.jetty.webapp.WebInfConfiguration.resolveTempDirectory (WebInfConfiguration.java:424)
+    at org.eclipse.jetty.webapp.WebInfConfiguration.preConfigure (WebInfConfiguration.java:140)
+    at org.eclipse.jetty.webapp.WebAppContext.preConfigure (WebAppContext.java:488)
+    at org.eclipse.jetty.webapp.WebAppContext.doStart (WebAppContext.java:523)
+    at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart (JettyWebAppContext.java:397)
+    at org.eclipse.jetty.util.component.AbstractLifeCycle.start (AbstractLifeCycle.java:73)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.start (ContainerLifeCycle.java:169)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart (ContainerLifeCycle.java:117)
+    at org.eclipse.jetty.server.handler.AbstractHandler.doStart (AbstractHandler.java:97)
+    at org.eclipse.jetty.util.component.AbstractLifeCycle.start (AbstractLifeCycle.java:73)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.start (ContainerLifeCycle.java:169)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart (ContainerLifeCycle.java:117)
+    at org.eclipse.jetty.server.handler.AbstractHandler.doStart (AbstractHandler.java:97)
+    at org.eclipse.jetty.util.component.AbstractLifeCycle.start (AbstractLifeCycle.java:73)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.start (ContainerLifeCycle.java:169)
+    at org.eclipse.jetty.server.Server.start (Server.java:423)
+    at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart (ContainerLifeCycle.java:110)
+    at org.eclipse.jetty.server.handler.AbstractHandler.doStart (AbstractHandler.java:97)
+    at org.eclipse.jetty.server.Server.doStart (Server.java:387)
+    at org.eclipse.jetty.util.component.AbstractLifeCycle.start (AbstractLifeCycle.java:73)
+    at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty (AbstractJettyMojo.java:449)
+    at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute (AbstractJettyMojo.java:310)
+    at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute (JettyRunMojo.java:150)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:919)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:285)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:207)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:565)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[INFO] Started ServerConnector@48268eec{HTTP/1.1, (http/1.1)}{0.0.0.0:8888}
+[INFO] Started @2878ms
+[INFO] Started Jetty Server

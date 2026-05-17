@@ -492,3 +492,87 @@ Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieva
 2026-05-05 21:15:57 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 14 ms
 2026-05-05 21:15:57 [qtp659906939-66] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 84 ms
 2026-05-05 21:16:06 [qtp659906939-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 52 ms
+2026-05-06 19:57:22 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 87 ms
+2026-05-06 19:57:24 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 9 ms
+2026-05-06 19:57:26 [qtp659906939-99] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 104 ms
+2026-05-06 19:57:28 [qtp659906939-61] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 62 ms
+2026-05-06 19:57:29 [qtp659906939-99] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 39 ms
+2026-05-17 11:54:49 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2026-05-17 11:54:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-17 11:54:51 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-17 11:54:51 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-05-17 11:54:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-17 11:54:53 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext initialized in 3246 ms
+2026-05-17 11:54:53 [main] INFO  c.c.filter.PerformanceAuditFilter - PerformanceAuditFilter initialized.
+2026-05-17 11:54:53 [main] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2026-05-17 11:54:54 [main] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1185 ms
+2026-05-17 11:55:01 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /health took 96 ms
+2026-05-17 11:57:51 [qtp2131984667-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 172 ms
+2026-05-17 11:57:51 [qtp2131984667-57] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 26 ms
+2026-05-17 11:57:51 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 25 ms
+2026-05-17 11:57:52 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 100 ms
+2026-05-17 11:57:52 [qtp2131984667-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 36 ms
+2026-05-17 11:57:52 [qtp2131984667-49] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 7 ms
+2026-05-17 11:57:52 [qtp2131984667-56] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /official/complaint/1/assign took 108 ms
+2026-05-17 11:57:52 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 13 ms
+2026-05-17 12:10:49 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 864 ms
+2026-05-17 12:10:49 [qtp2131984667-62] WARN  c.c.filter.PerformanceAuditFilter - SLOW ENDPOINT DETECTED: [POST] /register took 864 ms
+2026-05-17 12:10:49 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 10 ms
+2026-05-17 12:10:49 [qtp2131984667-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 8 ms
+2026-05-17 12:10:49 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 7 ms
+2026-05-17 12:10:49 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 9 ms
+2026-05-17 12:10:49 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 6 ms
+2026-05-17 12:10:49 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /official/complaint/1/assign took 9 ms
+2026-05-17 12:10:49 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 6 ms
+2026-05-17 12:10:50 [qtp2131984667-52] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 298 ms
+2026-05-17 12:10:51 [qtp2131984667-55] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 226 ms
+2026-05-17 12:10:52 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 6 ms
+2026-05-17 12:10:52 [qtp2131984667-55] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 4 ms
+2026-05-17 12:10:54 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 19 ms
+2026-05-17 12:10:54 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 4 ms
+2026-05-17 12:10:57 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 235 ms
+2026-05-17 12:10:58 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 9 ms
+2026-05-17 12:11:00 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 243 ms
+2026-05-17 12:11:00 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 2 ms
+2026-05-17 12:11:02 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 15 ms
+2026-05-17 12:11:02 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 3 ms
+2026-05-17 12:11:05 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /whistleblower took 250 ms
+2026-05-17 12:11:05 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 4 ms
+2026-05-17 12:11:07 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 322 ms
+2026-05-17 12:11:07 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /favicon.ico took 2 ms
+2026-05-17 12:11:10 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 179 ms
+2026-05-17 12:11:12 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/karma-history took 182 ms
+2026-05-17 12:11:15 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/1/verify took 161 ms
+2026-05-17 12:11:17 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/perks took 165 ms
+2026-05-17 12:11:20 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 185 ms
+2026-05-17 12:11:22 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 187 ms
+2026-05-17 12:11:25 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 139 ms
+2026-05-17 12:11:27 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/dashboard took 196 ms
+2026-05-17 12:11:30 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 130 ms
+2026-05-17 12:11:32 [qtp2131984667-54] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/history took 180 ms
+2026-05-17 12:12:17 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 17 ms
+2026-05-17 12:12:17 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 6 ms
+2026-05-17 12:12:17 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /register took 5 ms
+2026-05-17 12:12:17 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 5 ms
+2026-05-17 12:12:17 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /citizen/complaint/submit took 4 ms
+2026-05-17 12:12:17 [qtp2131984667-46] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 6 ms
+2026-05-17 12:12:17 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /official/complaint/1/assign took 8 ms
+2026-05-17 12:12:17 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [POST] /login took 6 ms
+2026-05-17 12:12:17 [qtp2131984667-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] / took 11 ms
+2026-05-17 12:12:18 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /favicon.ico took 1 ms
+2026-05-17 12:12:20 [qtp2131984667-53] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /login took 12 ms
+2026-05-17 12:12:22 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /register took 12 ms
+2026-05-17 12:12:25 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /transparency took 17 ms
+2026-05-17 12:12:27 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /leaderboard took 21 ms
+2026-05-17 12:12:29 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /whistleblower took 15 ms
+2026-05-17 12:12:32 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/dashboard took 21 ms
+2026-05-17 12:12:34 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/new took 15 ms
+2026-05-17 12:12:36 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/karma-history took 17 ms
+2026-05-17 12:12:39 [qtp2131984667-50] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/complaint/1/verify took 21 ms
+2026-05-17 12:12:41 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /citizen/perks took 15 ms
+2026-05-17 12:12:46 [qtp2131984667-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/dashboard took 24 ms
+2026-05-17 12:12:48 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/audit took 25 ms
+2026-05-17 12:12:51 [qtp2131984667-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /official/heatmap took 22 ms
+2026-05-17 12:12:53 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/dashboard took 22 ms
+2026-05-17 12:12:56 [qtp2131984667-51] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/schedule took 19 ms
+2026-05-17 12:12:58 [qtp2131984667-62] INFO  c.c.filter.PerformanceAuditFilter - PERFORMANCE AUDIT: [GET] /worker/history took 17 ms

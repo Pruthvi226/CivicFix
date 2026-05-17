@@ -112,8 +112,9 @@ CREATE TABLE notifications (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
--- Seed Initial Data
-INSERT INTO wards (name, city_zone) VALUES ('North Ward', 'Zone A'), ('Central Ward', 'Zone B'), ('South Ward', 'Zone C');
+-- =====================================================
+-- SEED INITIAL DATA
+-- =====================================================
 
 -- 7. PERKS
 CREATE TABLE perks (
@@ -125,7 +126,64 @@ CREATE TABLE perks (
     is_active BOOLEAN DEFAULT TRUE
 );
 
-INSERT INTO perks (name, description, cost_karma, icon_class) VALUES 
-('Free Coffee', 'Get a free coffee at a local partner cafe.', 50, 'fa-coffee'),
-('Public Transit Pass', 'One day free public transit pass.', 150, 'fa-bus'),
-('VIP City Event Ticket', 'Exclusive ticket to the upcoming city festival.', 500, 'fa-ticket-alt');
+-- Insert Wards
+INSERT INTO wards (name, city_zone) VALUES 
+('North Ward', 'Zone A'),
+('Central Ward', 'Zone B'),
+('South Ward', 'Zone C'),
+('East Ward', 'Zone D'),
+('West Ward', 'Zone E');
+
+-- Insert Default Admin User
+-- Username: admin | Password: admin123
+-- Password hash: L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ= (SHA-256 base64)
+INSERT INTO users (username, password, email, phone, role, karma_points, ward_id) VALUES
+('admin', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'admin@civicfix.local', '+91 9999999999', 'ADMIN', 0, 1);
+
+-- Insert Sample Citizens with karma points
+INSERT INTO users (username, password, email, phone, role, karma_points, ward_id) VALUES
+('rajesh_kumar', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'rajesh@example.com', '+91 9876543210', 'CITIZEN', 450, 1),
+('priya_sharma', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'priya@example.com', '+91 9876543211', 'CITIZEN', 320, 2),
+('amit_singh', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'amit@example.com', '+91 9876543212', 'CITIZEN', 180, 1),
+('neha_gupta', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'neha@example.com', '+91 9876543213', 'CITIZEN', 250, 3);
+
+-- Insert Sample Workers
+INSERT INTO users (username, password, email, phone, role, karma_points, ward_id) VALUES
+('worker_ravi', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'ravi@workers.com', '+91 8765432100', 'WORKER', 0, 1),
+('worker_deepak', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'deepak@workers.com', '+91 8765432101', 'WORKER', 0, 2),
+('worker_vikram', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'vikram@workers.com', '+91 8765432102', 'WORKER', 0, 3);
+
+-- Insert Sample Officials
+INSERT INTO users (username, password, email, phone, role, karma_points, ward_id) VALUES
+('official_sharma', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'sharma@officials.com', '+91 7654321000', 'OFFICIAL', 0, 1),
+('official_verma', 'L2/YUK4pUSKiOlQaFBBZgUFvLkF3dU8x7n2g4OhVXqQ=', 'verma@officials.com', '+91 7654321001', 'OFFICIAL', 0, 2);
+
+-- Insert Sample Complaints (Mix of statuses to showcase workflow)
+INSERT INTO complaints (citizen_id, ward_id, category, severity, description, latitude, longitude, address, status, assigned_worker_id, estimated_fix_time) VALUES
+(2, 1, 'POTHOLE', 'CRITICAL', 'Large pothole in middle of main street causing damage to vehicles', 28.7041, 77.1025, 'Main Street, North Ward', 'ASSIGNED', 6, 2),
+(3, 2, 'DRAIN', 'HIGH', 'Drainage system overflowing during heavy rains', 28.6139, 77.2090, 'Water Street, Central Ward', 'OPEN', NULL, 3),
+(4, 1, 'STREETLIGHT', 'MEDIUM', 'Street light not working for past 2 weeks', 28.7080, 77.1050, 'Park Avenue, North Ward', 'ASSIGNED', 7, 1),
+(5, 3, 'GARBAGE', 'LOW', 'Garbage not collected from residential area', 28.5244, 77.1855, 'Residential Zone, South Ward', 'RESOLVED', 8, 1),
+(2, 2, 'POTHOLE', 'HIGH', 'Multiple potholes on the connecting road', 28.6150, 77.2100, 'Connecting Road, Central Ward', 'VERIFIED', 6, 2),
+(3, 1, 'OTHER', 'MEDIUM', 'Pavement broken and uneven', 28.7100, 77.1080, 'Sidewalk Street, North Ward', 'OPEN', NULL, 4);
+
+-- Insert Sample Karma Transactions
+INSERT INTO karma_transactions (citizen_id, points, reason) VALUES
+(2, 100, 'Complaint POTHOLE-001 verified'),
+(2, 50, 'Resolution photo provided'),
+(3, 75, 'Multiple complaints filed'),
+(4, 25, 'Complaint accepted'),
+(5, 150, 'Complaint DRAIN-001 verified');
+
+-- Insert Perks
+INSERT INTO perks (name, description, cost_karma, icon_class, is_active) VALUES 
+('Free Coffee', 'Get a free coffee at a local partner cafe.', 50, 'fa-coffee', TRUE),
+('Public Transit Pass', 'One day free public transit pass.', 150, 'fa-bus', TRUE),
+('VIP City Event Ticket', 'Exclusive ticket to the upcoming city festival.', 500, 'fa-ticket-alt', TRUE),
+('Free Meal Voucher', 'Voucher for a meal at local restaurants.', 200, 'fa-utensils', TRUE);
+
+-- Insert Predictive Flags (High-risk areas needing attention)
+INSERT INTO predictive_flags (ward_id, category, latitude, longitude, risk_level, advisory_message, is_active) VALUES
+(1, 'POTHOLE', 28.7050, 77.1100, 'HIGH', 'This area has history of potholes. Preventive maintenance recommended.', TRUE),
+(2, 'DRAIN', 28.6145, 77.2095, 'IMMINENT_FAILURE', 'Drainage system is at critical condition. Immediate action required.', TRUE),
+(3, 'STREETLIGHT', 28.5250, 77.1860, 'MODERATE', 'Several streetlights in this zone are aging. Plan replacement soon.', TRUE);

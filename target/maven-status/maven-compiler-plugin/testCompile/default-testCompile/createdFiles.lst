@@ -1,0 +1,3 @@
+com\civicfix\controller\PublicControllerIntegrationTest.class
+com\civicfix\service\ComplaintClassifierServiceTest.class
+com\civicfix\service\KarmaEngineServiceTest.class
