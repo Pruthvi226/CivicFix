@@ -422,6 +422,3 @@ Open a pull request with:
 - Screenshots for UI changes.
 - Test results or explanation if tests were not applicable.
 
-## License
-
-This repository does not currently include a license file. For a public portfolio or open-source release, add a `LICENSE` file. MIT is a good default for this type of educational portfolio project.
