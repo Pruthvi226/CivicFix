@@ -12,16 +12,15 @@
            http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- 1. Property Placeholder Configurer to read from Environment Variables -->
-    <context:property-placeholder location="classpath:application.properties"
-                                  system-properties-mode="ENVIRONMENT"/>
+    <!-- 1. Property Placeholder Configurer for non-secret application settings -->
+    <context:property-placeholder location="classpath:application.properties"/>
 
-    <!-- 2. DataSource Bean (reads from env vars or falls back to defaults in properties) -->
+    <!-- 2. DataSource Bean (builds JDBC settings from DB_* environment variables) -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${db.driver}"/>
-        <property name="url" value="${db.url}"/>
-        <property name="username" value="${db.username}"/>
-        <property name="password" value="${db.password}"/>
+        <property name="driverClassName" value="#{T(com.civicfix.config.DatabaseConfig).getDriverClassName()}"/>
+        <property name="url" value="#{T(com.civicfix.config.DatabaseConfig).getJdbcUrl()}"/>
+        <property name="username" value="#{T(com.civicfix.config.DatabaseConfig).getUsername()}"/>
+        <property name="password" value="#{T(com.civicfix.config.DatabaseConfig).getPassword()}"/>
     </bean>
 
     <!-- 3. Hibernate SessionFactory Bean -->
@@ -38,7 +37,7 @@
         <!-- Hibernate Properties -->
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.dialect">#{T(com.civicfix.config.DatabaseConfig).getHibernateDialect()}</prop>
                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>

@@ -6,10 +6,14 @@ services:
     plan: free
     healthCheckPath: /health
     envVars:
-      - key: DB_URL
-        sync: false
+      - key: DB_HOST
+        value: ballast.proxy.rlwy.net
+      - key: DB_PORT
+        value: "12771"
+      - key: DB_NAME
+        value: civicfix
       - key: DB_USER
-        sync: false
+        value: root
       - key: DB_PASSWORD
         sync: false
       - key: AES_KEY

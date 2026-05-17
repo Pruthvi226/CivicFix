@@ -253,20 +253,20 @@ Application properties are loaded from `src/main/resources/application.propertie
 
 | Environment Variable | Default | Purpose |
 | --- | --- | --- |
-| `DB_URL` | `jdbc:h2:mem:civicfix_db;DB_CLOSE_DELAY=-1;MODE=MySQL` | JDBC connection URL. |
+| `DB_HOST` | empty | Database host. When absent, the app uses the local H2 fallback. |
+| `DB_PORT` | empty | Database port. |
+| `DB_NAME` | empty | Database name. |
 | `DB_USER` | `sa` | Database username. |
 | `DB_PASSWORD` | empty | Database password. |
-| `DB_DRIVER` | `org.h2.Driver` | JDBC driver class. |
-| `DB_DIALECT` | `org.hibernate.dialect.H2Dialect` | Hibernate dialect. |
 
 For MySQL:
 
 ```bash
-DB_URL=jdbc:mysql://localhost:3309/civicfix_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+DB_HOST=localhost
+DB_PORT=3309
+DB_NAME=civicfix
 DB_USER=root
-DB_PASSWORD=password
-DB_DRIVER=com.mysql.cj.jdbc.Driver
-DB_DIALECT=org.hibernate.dialect.MySQL8Dialect
+DB_PASSWORD=<your-password>
 ```
 
 ## Run Locally
