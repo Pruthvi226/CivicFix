@@ -9,13 +9,24 @@ public final class DatabaseConfig {
         String host = System.getenv("DB_HOST");
         String port = System.getenv("DB_PORT");
         String name = System.getenv("DB_NAME");
+        String sslMode = System.getenv("DB_SSL_MODE");
+        String urlParams = System.getenv("DB_URL_PARAMS");
 
         if (isBlank(host) || isBlank(port) || isBlank(name)) {
             return "jdbc:h2:mem:civicfix_db;DB_CLOSE_DELAY=-1;MODE=MySQL";
         }
 
+        if (isBlank(sslMode)) {
+            sslMode = "REQUIRED";
+        }
+
+        String params = "sslMode=" + sslMode + "&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+        if (!isBlank(urlParams)) {
+            params = params + "&" + urlParams;
+        }
+
         return "jdbc:mysql://" + host + ":" + port + "/" + name
-                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+                + "?" + params;
     }
 
     public static String getUsername() {

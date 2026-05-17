@@ -7,15 +7,17 @@ services:
     healthCheckPath: /health
     envVars:
       - key: DB_HOST
-        value: ballast.proxy.rlwy.net
+        value: gateway01.us-west-2.prod.aws.tidbcloud.com
       - key: DB_PORT
-        value: "12771"
+        value: "4000"
       - key: DB_NAME
-        value: civicfix
+        value: sys
       - key: DB_USER
-        value: root
+        value: 48rF6Ed8v1fztaA.root
       - key: DB_PASSWORD
         sync: false
+      - key: DB_SSL_MODE
+        value: REQUIRED
       - key: AES_KEY
         sync: false
       - key: JAVA_OPTS
